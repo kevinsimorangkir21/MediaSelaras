@@ -4,6 +4,7 @@ import Image from 'next/future/image'
 import medsel from '../public/img/Logo.svg'
 const Home: NextPage = () => {
   return (
+    <div className='w-full h-screen'>
     <div className='w-full relative h-screen overflow-hidden'>
       <Head>
         <meta name="description" content="Media Selaras sebagai suatu Wadah
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
           />
         <meta name="keywords" content="Medsel, Media Selaras, MedSelaras"/>
         <title>Media Selaras</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="apple-touch-icon-precomposed" sizes="57x57" href="ico/apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72x72.png" />
@@ -84,9 +86,9 @@ const Home: NextPage = () => {
      
       </div>
       
-    </div>
+      </div>
     
-
+    </div>
   )
 }
 

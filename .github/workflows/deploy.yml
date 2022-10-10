@@ -10,6 +10,7 @@ on:
     branches:
       - main
   workflow_dispatch:
+permissions: read-all|write-all
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest

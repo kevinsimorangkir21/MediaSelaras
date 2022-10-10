@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.marquee-content{
+  animation: mymove 7s linear infinite;
+}
+#bg-gradient{
+  opacity: 1;
+  animation: fade 7s linear infinite;
+}
+@keyframes fade {
+  0%{opacity:0}
+  50%{opacity:1}
+  100%{opactiy:0}
+}
+@keyframes mymove {
+  0% {transform: translateX(-140vw); left:0;}
+  20% {transform: translateX(-30vw);}
+  35%{transform: translateX(-60vw)}
+  50%{transform: translateX(-30vw)}
+  60%{transform: translateX(-35vw)}
+  70%{transform: translateX(-30vw)}
+  85% {transform: translateX(-32vw)}  
+  100%{transform: translateX(-30vw);}
+}

@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face{
+  font-family: 'Inter';
+  src: local('Inter'), url("../public/font/Inter-SemiBold.otf") format('otf');
+}
 
 .marquee-content{
   animation: mymove 7s linear infinite;

@@ -4,6 +4,10 @@
 
 @layer base{
 
+  body{
+    @apply bg-gray-100;
+  }
+  
   @font-face{
     font-family: 'Inter';
     src: local('Inter'), url("../public/font/Inter-SemiBold.otf") format('otf');

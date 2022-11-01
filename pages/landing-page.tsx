@@ -1,7 +1,8 @@
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import {FaSpotify} from 'react-icons/fa'
+import {BsSpotify} from 'react-icons/bs'
 import Layout from '../components/Layout/Layout'
+import Navbar from '../components/NavbarFooter/Navbar'
 import NextImage from '../components/NextImage'
 
 type Inputs = {
@@ -17,14 +18,15 @@ export default function Landingpage() {
   return (
     <Layout>
         <main>
+            <Navbar />
             <div className='w-full min-h-screen font-jakartasans '>
                 <section className='Landing Page'>
-                    <div className='flex m-auto max-w-7xl basis-1/2'>
-                        <div className='self-center pr-14 '>
-                            <h1 className='font-bold text-5xl'>
+                    <div className='flex m-auto max-w-8xl max-w-7xl gap-14'>
+                        <div className='self-center '>
+                            <h1 className='font-bold text-[54px] leading-snug'>
                                 Wadah pengedukasian konten kreatif terkait isu-isu sosial
                             </h1>
-                            <p className='py-3'>
+                            <p className='py-4 text-2xl'>
                                 Komunitas yang memberikan edukasi mengenai pendidikan, ekonomi, environment, kesehatan serta pemberdayaan masyarakat
                             </p>
                             <div className='inline-flex py-3 px-8 mt-4 rounded-2xl text-white bg-[#E77E49]'>
@@ -62,33 +64,7 @@ export default function Landingpage() {
                         <h3 className='text-center text-base py-8 text-gray-400'>dan 50+ lainnya</h3>
                     </div>
                 </section>
-                <section className='Medsel Podcast'>
-                    <div className='w-full flex gap-10 max-w-7xl justify-center content-center mx-auto '>
-                        <div className='w-1/3 m-auto py-7'>
-                            <h1 className='text-4xl font-bold pb-4 leading-normal'>Media Selaras Podcast (Suara Selaras)</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laudantium deserunt unde corporis culpa voluptatum minus ex consequuntur suscipit id in nam esse libero nostrum</p>
-                            <div className='mt-4 p-3 rounded-2xl bg-black inline-flex'>
-                                <p className='text-white'>Dengarkan Sekarang di Spotify</p>
-                            </div>
-                        </div>
-                        <div className='w-2/3 flex gap-8'>
-                            <div className="p-6 outline outline-1 outline-slate-300 rounded-md">
-                                <NextImage alt="/" layout='responsive' height="60%" width ="70%" src="/img/landingpage/podcast.png"/>
-                                <div className='pt-4'>
-                                    <h1 className='font-bold '>Yang belum merdeka dari kita</h1>
-                                    <p className='pt-2 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ad.</p>
-                                </div>
-                            </div>
-                            <div className="p-6 outline outline-1 outline-slate-300 rounded-md">
-                                <NextImage layout="responsive" alt="/" height="50%" width ="50%" src="/img/landingpage/podcast.png"/>
-                                <div className='pt-4'>
-                                    <h1 className='font-bold '>Yang belum merdeka dari kita</h1>
-                                    <p className='pt-2 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+               
                 <section className='Tentang Medsel'>
                     <div className='relative w-full'>
                         <div className='flex flex-row items-start m-auto max-w-7xl'>
@@ -113,9 +89,36 @@ export default function Landingpage() {
                         </div>
                     </div>
                 </section>
+                <section className='Medsel Podcast'>
+                    <div className='w-full flex gap-14 max-w-7xl justify-center content-center mx-auto pt-14'>
+                        <div className='w-2/5 m-auto py-7'>
+                            <h1 className='text-4xl font-bold pb-4 leading-normal'>Media Selaras Podcast (Suara Selaras)</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laudantium deserunt unde corporis culpa voluptatum minus ex consequuntur suscipit id in nam esse libero nostrum</p>
+                            <div className='mt-5 p-3 rounded-2xl bg-black inline-flex gap-2'>
+                            <BsSpotify className='text-green-400  bg-white rounded-2xl self-center'/><p className='text-white'>Dengarkan Sekarang di Spotify</p>
+                            </div>
+                        </div>
+                        <div className='w-3/5 flex gap-8'>
+                            <div className="py-5 px-4 outline outline-1 outline-slate-300 rounded-md">
+                                <NextImage alt="/" layout='responsive' height="25%" width ="30%" src="/img/landingpage/podcast.png"/>
+                                <div className='pt-5'>
+                                    <h1 className='font-bold '>Yang belum merdeka dari kita</h1>
+                                    <p className='py-2 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ad.</p>
+                                </div>
+                            </div>
+                            <div className="py-5 px-4 outline outline-1 outline-slate-300 rounded-md">
+                                <NextImage layout="responsive" alt="/" height="25%" width ="30%" src="/img/landingpage/podcast.png"/>
+                                <div className='pt-4'>
+                                    <h1 className='font-bold '>Yang belum merdeka dari kita</h1>
+                                    <p className='pt-2 font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section className='Kontak'>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className='flex w-full px-14'>
+                        <div className='flex w-full max-w-7xl m-auto pt-14'>
                             <div className='w-1/2 basis-1/2'>
                                 <div className='mt-20'>
                                     <h1 className='text-4xl font-bold'>Kontak</h1>

@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="w-screen bg-white relative lg:h-[230px]">
             <div className='flex justify-between items-center p-8'>
                 <div className=''>
-                    <Image src={logo} />
+                    <Image src={logo} alt ="" />
                 </div>
                 <div className='flex gap-6'>
                     <BsInstagram size={24} />

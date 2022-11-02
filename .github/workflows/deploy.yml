@@ -1,4 +1,4 @@
-name: Media Selaras Front End Deployment Vercel
+name: Media Selaras Front End Production Deployment Vercel
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

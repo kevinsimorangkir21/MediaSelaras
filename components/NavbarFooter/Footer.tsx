@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logo from '../../asset/logo.svg';
-import {BsInstagram, BsTwitter, BsLinkedin} from "react-icons/Bs"
+import {BsInstagram, BsTwitter, BsLinkedin} from 'react-icons/Bs'
 import TentangKami from './TentangKamiDropdown';
 import Informasi from './InformasiDropdown';
 

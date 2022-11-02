@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import {GiHamburgerMenu} from "react-icons/gi"
+import {GiHamburgerMenu} from 'react-icons/gi'
 import Image from 'next/image';
 import logo from '../../asset/logo.svg';
 import TentangKami from './TentangKamiDropdown';

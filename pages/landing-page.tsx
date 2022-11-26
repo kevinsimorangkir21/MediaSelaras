@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import {BsSpotify} from 'react-icons/Bs'
+import {BsSpotify} from 'react-icons/bs'
 import Layout from '../components/Layout/Layout'
 import Footer from '../components/NavbarFooter/Footer'
 import Navbar from '../components/NavbarFooter/Navbar'

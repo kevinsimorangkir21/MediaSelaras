@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import sampleImage from '../public/img/login/login-img.png'
+import sampleImage from '../../public/img/login/login-img.png'
 import {AiOutlineWhatsApp, AiOutlineInstagram, AiFillTwitterCircle} from 'react-icons/ai'
 import {BsFacebook} from 'react-icons/bs'
 import {CgProfile} from 'react-icons/cg'

@@ -2,17 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base{
+
   body{
     @apply bg-gray-100;
   }
+  
+  @font-face{
+    font-family: 'Inter';
+    src: local('Inter'), url("../public/font/Inter-SemiBold.otf") format('otf');
+  }
+
+  @font-face {
+    font-family: 'PlusJakarta';
+    font-style: normal;
+    font-weight: 300;
+    src: url("../public/font/PlusJakartaSans-Light.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: 'PlusJakarta';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/font/PlusJakartaSans-Medium.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: 'PlusJakarta';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../public/font/PlusJakartaSans-Regular.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: 'PlusJakarta';
+    font-style: normal;
+    font-weight: 600;
+    src: url("../public/font/PlusJakartaSans-SemiBold.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: 'PlusJakarta';
+    font-style: normal;
+    font-weight: 700;
+    src: url("../public/font/PlusJakartaSans-Bold.woff2") format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'PlusJakarta';
+    font-style: normal;
+    font-weight: 800;
+    src: url("../public/font/PlusJakartaSans-ExtraBold.woff2") format('woff2');
+  }
 }
 
-@font-face{
-  font-family: 'Inter';
-  src: local('Inter'), url("../public/font/Inter-SemiBold.otf") format('otf');
-}
 
 .marquee-content{
   animation: mymove 7s linear infinite;
@@ -35,4 +78,38 @@
   70%{transform: translateX(-30vw)}
   85% {transform: translateX(-32vw)}  
   100%{transform: translateX(-30vw);}
+}
+
+.swiper-wrapper{
+  display: flex;
+  padding: 20px 0px;
+  z-index: 0;
+}
+
+.swiper-pagination{
+  display: flex;
+  z-index: 10;
+  gap:2px;
+  margin-left:28px;
+}
+.swiper-pagination-bullet-active {
+  background-color: #E77E49 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #E77E49 !important;
+}
+
+@media only screen and (min-width: 280px) {
+  .swiper-pagination-bullet {
+    width:12px !important;
+    height:12px !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .swiper-pagination-bullet {
+    width:16px !important;
+    height:16px !important;
+  }
 }

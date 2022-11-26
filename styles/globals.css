@@ -79,3 +79,37 @@
   85% {transform: translateX(-32vw)}  
   100%{transform: translateX(-30vw);}
 }
+
+.swiper-wrapper{
+  display: flex;
+  padding: 20px 0px;
+  z-index: 0;
+}
+
+.swiper-pagination{
+  display: flex;
+  z-index: 10;
+  gap:2px;
+  margin-left:28px;
+}
+.swiper-pagination-bullet-active {
+  background-color: #E77E49 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #E77E49 !important;
+}
+
+@media only screen and (min-width: 280px) {
+  .swiper-pagination-bullet {
+    width:12px !important;
+    height:12px !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .swiper-pagination-bullet {
+    width:16px !important;
+    height:16px !important;
+  }
+}

@@ -178,14 +178,14 @@ export default function Instagram() {
                 { Object.entries(allLink).map((data => {
                     let spotify : any = data
                         return (
-                            <div key={spotify[0]} className="bg-white p-3 w-fit my-3 mx-auto sm:mx-1" >
+                            <div key={spotify[0]} className="bg-white p-3 w-[250px] my-3 mx-auto sm:mx-1" >
                                 <div>
                                     <a className='rounded-md' href={spotify[1].url} target="_blank" rel="noreferrer" >
-                                        <div className='border border-1 rounded-md border-slate-400 w-[200px] h-[200px] relative'>
+                                        <div className='border border-1 rounded-md border-slate-400 w-[200px] h-[200px] relative mx-autodfasdk'>
                                             <Image  className="object-cover rounded-md"  src={spotify[1].image} layout="fill" objectFit="cover"  />
                                         </div>
                                         <p className='font-bold'>{spotify[1].title}</p>
-                                        <p>{spotify[1].desc}</p>
+                                        <p>{spotify[1].desc.slice(0, 200) + " ..."}</p>
                                     </a>
                                     <FaTrashAlt className=' my-3 mx-auto hover:text-red-500 cursor-pointer' onClick={() => handleDelete(data[0])} />
                                 </div>

@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
+import Link from 'next/link'
 
 
 function classNames(...classes : string[]) {
@@ -27,6 +28,20 @@ export default function TentangKami() {
       >
         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <Link href="/tentang-medsel">
+                    <p
+                      className={classNames(
+                        active ? 'bg-gray-100 text-gray-900 cursor-pointer' : 'text-gray-700',
+                        'block px-4 py-2 text-sm cursor-pointer'
+                        )}
+                        >
+                      Tentang Medsel
+                    </p>
+                  </Link>
+                )}
+              </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <a
@@ -36,33 +51,7 @@ export default function TentangKami() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Item 1
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Item 2
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Item 3
+                  Struktur Komunitas
                 </a>
               )}
             </Menu.Item>

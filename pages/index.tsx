@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Comingsoonpage from './coming-soon'
-import StrukturKomunitas from './strukturKomunitas';
+import Landingpage from './landing-page';
 export default function IndexPage(){
-  return  <StrukturKomunitas/>
+  return  (
+    <Landingpage />
+  )
 }

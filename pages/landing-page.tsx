@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import {BsSpotify} from 'react-icons/Bs'
+import {BsSpotify} from 'react-icons/bs'
 import Layout from '../components/Layout/Layout'
 import Footer from '../components/NavbarFooter/Footer'
 import Navbar from '../components/NavbarFooter/Navbar'
@@ -40,7 +40,7 @@ export default function Landingpage() {
                     <section className='Landing Page'>
                         <div className='flex sm:flex-row flex-col m-auto  lg:max-w-7xl lg:gap-14 p-7 lg:p-7'>
                             <div className='self-center '>
-                                <h1 className='font-bold lg:text-5xl md:text-xl lg:leading-snug'>
+                                <h1 className='font-bold lg:text-5xl text-3xl lg:leading-snug'>
                                     Wadah pengedukasian konten kreatif terkait isu-isu sosial
                                 </h1>
                                 <p className='py-4 lg:text-2xl  text-base'>

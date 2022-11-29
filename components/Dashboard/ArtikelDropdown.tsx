@@ -6,12 +6,12 @@ function classNames(...classes : string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Informasi() {
+export default function ArtikelDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <div>
+      <div className='border bottom-1 p-2'>
         <Menu.Button className="group inline-flex w-full justify-center items-center border-gray-300 bg-transparant">
-            <h3 className='text-base text-slate-500 group-hover:text-black'>Informasi</h3>
+            <h3 className='text-xl text-slate-500 group-hover:text-black mr-14'>Terbaru</h3>
             <svg className=" w-4 h-4 ml-3 text-slate-500 group-hover:text-black" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </Menu.Button>
       </div>
@@ -36,7 +36,7 @@ export default function Informasi() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Medcast
+                  Item 1
                 </a>
               )}
             </Menu.Item>
@@ -49,7 +49,7 @@ export default function Informasi() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Koperasi Selaras
+                  Item 2
                 </a>
               )}
             </Menu.Item>
@@ -62,20 +62,7 @@ export default function Informasi() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Info Magang
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Info Beasiswa
+                  Item 3
                 </a>
               )}
             </Menu.Item>

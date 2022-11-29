@@ -6,7 +6,7 @@ export default function artikel() {
   return (
     <main>
         <Navbar/>
-        <div className='w-full min-h-screen bg-white font-jakartasans '>
+        <div className='w-full min-h-screen bg-white'>
         <section className='Artikel Hero '>
             
             <div className='flex flex-col bg-white px-5 sm:px-8 sm:max-w-3xl md:max-w-5xl lg:max-w-7xl lg:m-auto'>

@@ -36,7 +36,7 @@ export default function Landingpage() {
         <Layout>
             <main>
                 <Navbar />
-                <div className='w-full min-h-screen font-jakartasans bg-white overflow-hidden'>
+                <div className='w-full min-h-screen bg-white overflow-hidden'>
                     <section className='Landing Page'>
                         <div className='flex sm:flex-row flex-col m-auto  lg:max-w-7xl lg:gap-14 p-7 lg:p-7'>
                             <div className='self-center '>

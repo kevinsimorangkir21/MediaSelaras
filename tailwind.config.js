@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     "./node_modules/flowbite-react/**/*.js",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./public/**/*.html",
+    './src/**/*.{js,jsx,ts,tsx}'
   ],
   plugins:[
     require("flowbite/plugin")
@@ -13,7 +13,7 @@ module.exports = {
     extend: {
       fontFamily:{
         inter: ['Inter', 'sans-serif'],
-        jakartasans: ['PlusJakarta', 'sans-serif']
+        jakartasans: ['PlusJakarta', ...fontFamily.sans]
       },
     },
   },

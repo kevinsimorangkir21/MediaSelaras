@@ -8,7 +8,7 @@ function classNames(...classes : string[]) {
 
 export default function Informasi() {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left z-50">
       <div>
         <Menu.Button className="group inline-flex w-full justify-center items-center border-gray-300 bg-transparant">
             <h3 className='text-base text-slate-500 group-hover:text-black'>Informasi</h3>

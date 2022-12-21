@@ -4,12 +4,14 @@ import Navbar from "@/components/NavbarFooter/Navbar";
 import NextImage from "@/components/NextImage";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
+import Footer from "@/components/NavbarFooter/Footer";
 import "swiper/css/pagination";
 import {
   founder,
   executive,
   staff_media_selaras,
 } from "@/lib/data/stuktur-komunitas";
+import { Animation } from "@/components/Animation";
 
 function strukturKomunitas() {
   return (
@@ -17,12 +19,12 @@ function strukturKomunitas() {
       <main>
         <Navbar />
         <section>
-          <div className="min-h-screen flex justify-center relative">
+          <Animation className="min-h-screen flex justify-center relative">
             <div className="text-center self-center z-50">
-              <h1 className="font-semibold text-white text-4xl max-w-sm px-6 leading-[48px]">
+              <h1 className="font-semibold text-white text-4xl max-w-sm md:max-w-5xl lg:text-6xl px-6 leading-[48px]">
                 Struktur Komunitas Batch 3
               </h1>
-              <p className="font-semibold text-white text-3xl pt-10">
+              <p className="font-semibold text-white lg:text-5xl lg:pt-12 text-3xl pt-10">
                 Media Selaras 2022
               </p>
             </div>
@@ -34,12 +36,22 @@ function strukturKomunitas() {
               objectFit="cover"
               alt="komunitas"
               priority
+              className="md:hidden"
             />
-          </div>
-          <div className="m-auto px-7 overflow-hidden">
-            <div className="font-bold w-fit mx-auto text-3xl text-center pt-16 pb-4 relative">
+            <NextImage
+              src="/img/komunitas/komunitas1.png"
+              width="100%"
+              height="100%"
+              layout="fill"
+              objectFit="cover"
+              alt="komunitas"
+              priority
+            />
+          </Animation>
+          <Animation className="m-auto px-7 overflow-hidden">
+            <div className="font-bold w-fit mx-auto text-3xl md:text-4xl text-center pt-16 pb-4 lg:py-20 relative">
               Founder
-              <div className="absolute top-9 -right-6 -z-10">
+              <div className="absolute w-10 h-10 md:w-16 md:h-16 md:top-5 md:-right-10 top-9 -right-6 -z-10">
                 <NextImage
                   src="/img/komunitas/asset1.png"
                   width="80%"
@@ -98,9 +110,9 @@ function strukturKomunitas() {
                 ))}
               </Swiper>
             </div>
-          </div>
-          <div className="overflow-hidden p-7">
-            <div className="w-fit mx-auto font-bold text-3xl text-center pt-8 pb-4 relative">
+          </Animation>
+          <Animation className="overflow-hidden p-7">
+            <div className="w-fit mx-auto font-bold text-3xl md:text-4xl lg:pb-8 text-center pt-8 pb-4 relative">
               Board of Executive
               <div className="absolute w-14 -left-7 bottom-3 -z-10 ">
                 <NextImage
@@ -163,9 +175,9 @@ function strukturKomunitas() {
                 ))}
               </div>
             </div>
-          </div>
-          <div className="overflow-hidden px-6 md:hidden">
-            <div className="font-bold text-3xl text-center pt-10 relative max-w-xs mx-auto">
+          </Animation>
+          <Animation className="overflow-hidden px-6 md:hidden">
+            <div className="font-bold text-3xl md:text-4xl text-center pt-10  relative max-w-xs mx-auto">
               Staff Media Selaras 2022
               <div className="w-14 absolute -right-2 bottom-12 -z-10">
                 <NextImage
@@ -274,9 +286,9 @@ function strukturKomunitas() {
                 </div>
               )
             )}
-          </div>
-          <div className="hidden md:flex md:flex-col md:gap-y-6 overflow-hidden lg:max-w-7xl px-6 md:px-6  mx-auto relative">
-            <div className="font-bold text-3xl text-center pt-10 relative w-fit mx-auto">
+          </Animation>
+          <Animation className="hidden md:flex md:flex-col md:gap-y-6 overflow-hidden lg:max-w-7xl px-6 md:px-6  mx-auto relative">
+            <div className="font-bold text-3xl text-center pt-10 lg:pt-13 lg:pb-10 relative w-fit mx-auto">
               Staff Media Selaras 2022
               <div className="w-16 absolute -right-10 top-0 -z-10">
                 <NextImage
@@ -290,7 +302,7 @@ function strukturKomunitas() {
             </div>
             {staff_media_selaras.map(
               ({ title, ketua, staff }: any, i: number) => (
-                <div key={i} className="pb-16">
+                <Animation className="pb-16" key={i}>
                   <p className="font-bold text-2xl pb-6">{title}</p>
                   <div
                     className={
@@ -382,7 +394,7 @@ function strukturKomunitas() {
                       )}
                     </div>
                   </div>
-                </div>
+                </Animation>
               )
             )}
             {/* asset HCF */}
@@ -565,8 +577,9 @@ function strukturKomunitas() {
                 alt=""
               />
             </div>
-          </div>
+          </Animation>
         </section>
+        <Footer />
       </main>
     </Layout>
   );

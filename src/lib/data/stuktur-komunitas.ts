@@ -233,7 +233,7 @@ const staff_media_selaras = [
         alt: "",
       },
       {
-        src: "/img/komunitas/staff/content-management/salma.png",
+        src: "/img/komunitas/staff/content-management/pani.png",
         nama: "Pani Amrina R",
         jabatan: "Staff Content Creator",
         alt: "",

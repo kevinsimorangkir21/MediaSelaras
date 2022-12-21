@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
+import Link from "next/link";
 import { BsSpotify } from "react-icons/bs";
 import Layout from "@/components/Layout/Layout";
 import Footer from "@/components/NavbarFooter/Footer";
 import Navbar from "@/components/NavbarFooter/Navbar";
 import NextImage from "@/components/NextImage";
+import { Animation } from "@/components/Animation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css/pagination";
@@ -13,26 +15,17 @@ import { arsipInstagram, komunitas } from "@/lib/data/homepage";
 
 type Inputs = {
   nama: string;
+  email: string;
   pesan: string;
   subjek: string;
 };
 
 export default function Landingpage() {
-  const email = useForm<Inputs>({
-    defaultValues: {
-      nama: "",
-      pesan: "",
-      subjek: "",
-    },
-  });
-  const Mailto = () => {
-    const url =
-      "mailto:ahnafmusyaffa47@gmail.com?cc=" +
-      email.formState.defaultValues?.nama +
-      "subject=" +
-      email.formState.defaultValues?.subjek +
-      "&body=" +
-      email.formState.defaultValues?.pesan;
+  const { register, handleSubmit, getValues } = useForm<Inputs>();
+  const onSubmit = (data: any) => {
+    const url = `mailto:${getValues("email")}?subject=${getValues(
+      "nama"
+    )}&body=${getValues("subjek")}&body=${getValues("pesan")}`;
     window.open(url, "_blank");
   };
   return (
@@ -41,11 +34,7 @@ export default function Landingpage() {
         <Navbar />
         <div className="w-full min-h-screen bg-white overflow-hidden">
           <section className="Landing Page">
-            <motion.div
-              viewport={{ once: true }}
-              transition={{ delayChildren: 1, duration: 1 }}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <Animation
               className="flex sm:flex-row flex-col m-auto  lg:max-w-7xl lg:gap-14 p-7 lg:p-7"
             >
               <div className="self-center ">
@@ -56,9 +45,11 @@ export default function Landingpage() {
                   Komunitas yang memberikan edukasi mengenai pendidikan,
                   ekonomi, environment, kesehatan serta pemberdayaan masyarakat
                 </p>
-                <div className="inline-flex py-3 px-8 text-sm md:text-base mt-4 rounded-2xl text-white bg-[#E77E49]">
-                  Kunjungi
-                </div>
+                <Link href="/struktur-komunitas">
+                  <div className="cursor-pointer inline-flex py-3 px-8 text-sm md:text-base mt-4 rounded-2xl text-white bg-[#E77E49]">
+                    Kunjungi
+                  </div>
+                </Link>
               </div>
               <div className="flex lg:w-1/2 w-full mx-auto justify-center">
                 <div className="w-[400px] self-center  sm:w-[300px] md:w-[400px] lg:w-[620px]">
@@ -72,14 +63,10 @@ export default function Landingpage() {
                   />
                 </div>
               </div>
-            </motion.div>
+            </Animation>
           </section>
           <section className="Komunitas">
-            <motion.div
-              viewport={{ once: true }}
-              transition={{ delayChildren: 1, duration: 1 }}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <Animation
               className="lg:py-16 flex max-w-7xl flex-col m-auto lg:px-14 p-7"
             >
               <h1 className="sm:text-center md:text-3xl text-xl w-3/4 sm:w-full pb-10 font-bold lg:pb-6">
@@ -99,14 +86,10 @@ export default function Landingpage() {
               <h3 className="text-center sm:text-base text-lg py-8 text-gray-400">
                 dan 50+ lainnya
               </h3>
-            </motion.div>
+            </Animation>
           </section>
           <section className="Tentang Medsel">
-            <motion.div
-              viewport={{ once: true }}
-              transition={{ delayChildren: 1, duration: 1 }}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <Animation
               className="relative w-full"
             >
               <div className="flex flex-row items-start m-auto max-w-7xl">
@@ -142,20 +125,18 @@ export default function Landingpage() {
                       yang lebih membutuhkan melalui penggalangan dana berupa
                       uang dan barang.
                     </p>
-                    <div className="bg-[#E77E49] inline-flex py-4 px-8 mt-4 rounded-3xl text-white text-sm">
-                      Read More
-                    </div>
+                    <Link href="/tentang-medsel">
+                      <div className="bg-[#E77E49] cursor-pointer inline-flex py-4 px-8 mt-4 rounded-3xl text-white text-sm">
+                        Read More
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Animation>
           </section>
           <section className="Arsip Instagram">
-            <motion.div
-              viewport={{ once: true }}
-              transition={{ delayChildren: 1, duration: 1 }}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <Animation
               className="max-w-7xl m-auto p-7 relative"
             >
               <div className="mb-4">
@@ -201,14 +182,10 @@ export default function Landingpage() {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </motion.div>
+            </Animation>
           </section>
           <section className="Arsip Artikel">
-            <motion.div
-              viewport={{ once: true }}
-              transition={{ delayChildren: 0.75, duration: 1 }}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <Animation
               className="max-w-7xl m-auto p-7 pt-10 sm:pt-16 relative"
             >
               <div className="mb-4 flex justify-between">
@@ -216,9 +193,11 @@ export default function Landingpage() {
                   Arsip Terakhir
                   <br /> Artikel
                 </h1>
-                <div className="self-center text-base inline-flex px-4  py-3 font-bold rounded-2xl text-[#E77E49] bg-[#FAE5DB]">
-                  Lihat Semua
-                </div>
+                <Link href="/artikel">
+                  <div className="cursor-pointer self-center text-base inline-flex px-4  py-3 font-bold rounded-2xl text-[#E77E49] bg-[#FAE5DB]">
+                    Lihat Semua
+                  </div>
+                </Link>
               </div>
               <Swiper
                 pagination={{
@@ -257,14 +236,10 @@ export default function Landingpage() {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </motion.div>
+            </Animation>
           </section>
           <section className="Media Selaras Podcast">
-            <motion.div
-              viewport={{ once: true }}
-              transition={{ delayChildren: 1, duration: 1 }}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <Animation
               className="w-full flex gap-14  lg:max-w-7xl m-auto justify-center pt-14 p-7 "
             >
               <div className="md:w-2/5 w-full m-auto lg:py-7 p-7 ">
@@ -322,25 +297,24 @@ export default function Landingpage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Animation>
           </section>
           <section className="Kontak">
-            <form>
-              <motion.div
-                viewport={{ once: true }}
-                transition={{ delayChildren: 1, duration: 1 }}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="flex w-full max-w-7xl m-auto lg:pt-14 p-7"
-              >
-                <div className="lg:w-1/2 lg:basis-1/2 w-full">
-                  <div className="lg:mt-20 mt-10">
-                    <h1 className="lg:text-4xl text-xl font-bold">Kontak</h1>
-                    <h3 className="lg:text-2xl text-base pt-2">
-                      ingin berkolaborasi dengan media selaras?
-                    </h3>
-                  </div>
-                  <div className="flex flex-col pt-6">
+            <Animation
+              className="flex w-full max-w-7xl m-auto lg:pt-14 p-7"
+            >
+              <div className="lg:w-1/2 lg:basis-1/2 w-full">
+                <div className="lg:mt-20 mt-10">
+                  <h1 className="lg:text-4xl text-xl font-bold">Kontak</h1>
+                  <h3 className="lg:text-2xl text-base pt-2">
+                    ingin berkolaborasi dengan media selaras?
+                  </h3>
+                </div>
+                <div>
+                  <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="flex flex-col pt-6"
+                  >
                     <label
                       htmlFor="nama"
                       className="lg:text-2xl text-base pb-2"
@@ -349,20 +323,20 @@ export default function Landingpage() {
                     </label>
                     <input
                       type="text"
-                      name="user_name"
+                      {...register("nama")}
                       placeholder="Masukkan Nama"
                       className="rounded-md p-3 outline outline-1 outline-slate-400"
                       id="nama"
                     />
                     <label
-                      htmlFor="nama"
+                      htmlFor="email"
                       className="pt-4 lg:text-2xl text-base pb-2"
                     >
                       Email
                     </label>
                     <input
                       type="text"
-                      name="user_email"
+                      {...register("email")}
                       placeholder="Masukkan Email"
                       className="rounded-md p-3 outline outline-1 outline-slate-400"
                       id="email"
@@ -375,10 +349,10 @@ export default function Landingpage() {
                     </label>
                     <input
                       type="text"
+                      {...register("subjek")}
                       className="p-3 rounded-md outline outline-1 outline-slate-400"
                       id="subjek"
                       placeholder="Masukkan Subjek"
-                      name="user_subjek"
                     />
                     <label
                       htmlFor="isi-pesan"
@@ -387,8 +361,8 @@ export default function Landingpage() {
                       Isi Pesan
                     </label>
                     <textarea
-                      name="message"
                       id="isi-pesan"
+                      {...register("pesan")}
                       className="p-3 rounded-md outline outline-1 outline-slate-400"
                       placeholder="Masukkan Pesan"
                       rows={8}
@@ -396,27 +370,26 @@ export default function Landingpage() {
                     <div className="flex justify-end">
                       <button
                         value="Send"
-                        onClick={() => Mailto()}
+                        type="submit"
                         className=" bg-[#E77E49] py-3 px-9 rounded-2xl text-white mt-8"
                       >
                         Submit
                       </button>
                     </div>
-                  </div>
+                  </form>
                 </div>
-                <div className="lg:w-1/2 lg:block hidden basis-1/2 self-center">
-                  <NextImage
-                    src="/img/landingpage/kontak.png"
-                    height="80%"
-                    width="100%"
-                    alt="medsel-kontak"
-                    layout="responsive"
-                    objectFit="contain"
-                  />
-                </div>
-              </motion.div>
-            </form>
-
+              </div>
+              <div className="lg:w-1/2 lg:block hidden basis-1/2 self-center">
+                <NextImage
+                  src="/img/landingpage/kontak.png"
+                  height="80%"
+                  width="100%"
+                  alt="medsel-kontak"
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </div>
+            </Animation>
             <Footer />
           </section>
         </div>

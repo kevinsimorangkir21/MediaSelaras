@@ -10,31 +10,26 @@ import photoBerbagiCerita from "~/img/about/photo-berbagi-cerita.png";
 import photoBergerakSelaras from "~/img/about/photo-bergerak-selaras.png";
 import photoImpiSelaras from "~/img/about/photo-impi-selaras.png";
 import photoAwarding from "~/img/about/photo-awarding.png";
+import { Animation } from "@/components/Animation";
 import { motion } from "framer-motion";
 export default function TentangMedsel() {
   return (
     <>
       <Navbar />
-      <motion.div
-        viewport={{ once: true }}
-        transition={{ delayChildren: 1, duration: 1 }}
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="bg-[#FAE1C7] relative overflow-hidden"
-      >
+      <Animation className="bg-[#FAE1C7] relative overflow-hidden">
         <div className="absolute -top-8 -left-14 z-20 w-64">
-          <Image src={ornamen1} />
+          <Image src={ornamen1} alt="" />
         </div>
         <div className="absolute -bottom-32 -right-36 z-20 w-64">
-          <Image src={ornamen2} />
+          <Image alt="" src={ornamen2} />
         </div>
         <div className="absolute lg:flex">
-          <Image src={bgKotak} />
-          <Image src={bgKotak} />
+          <Image alt="" src={bgKotak} />
+          <Image alt="" src={bgKotak} />
         </div>
         <div className="relative z-40 lg:flex lg:py-12">
           <div className="w-72 mx-auto pt-12 lg:w-[800px] lg:p-0 lg:mx-14">
-            <Image src={penghargaan} layout="responsive" />
+            <Image alt="" src={penghargaan} layout="responsive" />
           </div>
           <div className="text-center lg:my-auto lg:text-left lg:pr-10">
             <p className="hidden text-sm lg:block xl:text-lg">Penghargaan</p>
@@ -56,16 +51,11 @@ export default function TentangMedsel() {
             melalui penggalangan dana berupa uang dan barang.
           </p>
         </div>
-      </motion.div>
-      <motion.div
-        viewport={{ once: true }}
-        transition={{ delayChildren: 1, duration: 1 }}
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="bg-white lg:flex lg:flex-row-reverse lg:pt-10"
-      >
+      </Animation>
+      <Animation className="bg-white lg:flex lg:flex-row-reverse lg:pt-10">
         <div className="px-8 mx-auto text-center lg:w-1/2 pb-10 lg:mx-0 lg:p-0 lg:my-auto relative">
           <Image
+            alt=""
             src={photoMedsel}
             title=""
             width="100%"
@@ -119,15 +109,10 @@ export default function TentangMedsel() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </Animation>
 
       <div className="bg-white pt-10 px-6 md:px-20 lg:pt-16">
-        <motion.div
-          viewport={{ once: true }}
-          transition={{ delayChildren: 1, duration: 1 }}
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
+        <Animation>
           <p className="text-center text-3xl font-bold">
             Intip Keseruan Media Selaras
           </p>
@@ -137,6 +122,7 @@ export default function TentangMedsel() {
             </p>
             <div className="text-center relative w-96 mx-auto lg:w-1/2 lg:pr-12">
               <Image
+                alt=""
                 src={photoAwarding}
                 title=""
                 width="100%"
@@ -156,7 +142,7 @@ export default function TentangMedsel() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </Animation>
         <motion.div
           viewport={{ once: true }}
           transition={{ delayChildren: 1, duration: 1 }}
@@ -169,6 +155,7 @@ export default function TentangMedsel() {
           </p>
           <div className="text-center relative w-96 mx-auto lg:w-1/2 lg:pl-12">
             <Image
+              alt=""
               src={photoBerbagiCerita}
               title=""
               width="100%"
@@ -201,6 +188,7 @@ export default function TentangMedsel() {
           </p>
           <div className="text-center relative w-96 mx-auto lg:w-1/2 lg:pr-12">
             <Image
+              alt=""
               src={photoBergerakSelaras}
               title=""
               width="100%"
@@ -233,6 +221,7 @@ export default function TentangMedsel() {
           </p>
           <div className="text-center relative w-96 mx-auto lg:w-1/2 lg:pl-12">
             <Image
+              alt=""
               src={photoImpiSelaras}
               title=""
               width="100%"

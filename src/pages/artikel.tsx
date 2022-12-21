@@ -6,18 +6,14 @@ import ArtikelDropdown from "@/components/Dashboard/ArtikelDropdown";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Footer from "@/components/NavbarFooter/Footer";
+import {Animation} from "@/components/Animation"
 export default function artikel() {
   return (
     <main>
       <Navbar />
       <div className="w-full min-h-screen bg-white">
         <section className="Artikel Hero ">
-          <motion.div
-            viewport={{ once: true }}
-            transition={{ delayChildren: 1, duration: 1 }}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="flex flex-col bg-white px-5 sm:px-8 sm:max-w-3xl md:max-w-5xl lg:max-w-7xl lg:m-auto"
+          <Animation className="flex flex-col bg-white px-5 sm:px-8 sm:max-w-3xl md:max-w-5xl lg:max-w-7xl lg:m-auto"
           >
             <div className="relative mt-7 mb-3">
               <FiSearch className="sm:hidden visible absolute top-2 left-3 text-slate-300" />
@@ -73,14 +69,10 @@ export default function artikel() {
               </div>
             </Link>
             <hr className="sm:block hidden mt-6" />
-          </motion.div>
+          </Animation>
         </section>
         <section className="Artikel Feed">
-          <motion.div
-            viewport={{ once: true }}
-            transition={{ delayChildren: 1, duration: 1 }}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <Animation
             className="flex flex-col justify-between pb-4 px-5 sm:px-8 sm:max-w-3xl md:max-w-5xl lg:max-w-7xl lg:m-auto pt-6"
           >
             <div className="flex justify-end sm:justify-between pb-4">
@@ -225,7 +217,7 @@ export default function artikel() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </Animation>
         </section>
       </div>
       <Footer />

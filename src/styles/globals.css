@@ -87,13 +87,18 @@
   padding: 20px 0px;
   z-index: 0;
 }
-
+/* .executive .swiper-wrapper{
+  display: flex;
+  padding: 0px;
+  z-index:0;
+} */
 .swiper-pagination{
   display: flex;
   z-index: 10;
   gap:2px;
   margin-left:28px;
 }
+
 .swiper-pagination-bullet-active {
   background-color: #E77E49 !important;
 }

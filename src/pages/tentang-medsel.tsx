@@ -16,16 +16,12 @@ export default function TentangMedsel() {
   return (
     <>
       <Navbar />
-      <Animation className="bg-[#FAE1C7] relative overflow-hidden">
+      <Animation className="bg-[#FAE1C7] relative overflow-hidden bg-[url(../../public/img/about/bg-kotak.png)] bg-repeat-x">
         <div className="absolute -top-8 -left-14 z-20 w-64">
           <Image src={ornamen1} alt="" />
         </div>
         <div className="absolute -bottom-32 -right-36 z-20 w-64">
           <Image alt="" src={ornamen2} />
-        </div>
-        <div className="absolute lg:flex">
-          <Image alt="" src={bgKotak} />
-          <Image alt="" src={bgKotak} />
         </div>
         <div className="relative z-40 lg:flex lg:py-12">
           <div className="w-72 mx-auto pt-12 lg:w-[800px] lg:p-0 lg:mx-14">

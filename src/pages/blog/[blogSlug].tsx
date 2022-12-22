@@ -124,8 +124,8 @@ export default function BlogDetail() {
                             <p className='text-xl font-semibold pb-8 lg:text-3xl'>Artikel terbaru</p>
                             <>
                             {
-                                blogs.map((blog : any) => {
-                                    return <div className='px-16 grid grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-8 cursor-pointer'>
+                                blogs.map((blog : any, index : number) => {
+                                    return <div key={index} className='px-16 grid grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-8 cursor-pointer'>
                                                 <div className='w-80'>
                                                     <div className='w-80 h-48 relative'>
                                                         <Image src={blog.cover} layout="fill" objectFit="cover" />

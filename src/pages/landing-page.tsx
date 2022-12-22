@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { BsSpotify } from "react-icons/bs";
 import Layout from "@/components/Layout/Layout";
@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { arsipInstagram, komunitas } from "@/lib/data/homepage";
+import axios from "axios";
 
 type Inputs = {
   nama: string;
@@ -21,13 +22,53 @@ type Inputs = {
 };
 
 export default function Landingpage() {
+  const [blogs, setBlogs] = useState([]);
+  const [instagrams, setInstagrams] = useState([]);
+  const [spotifies, setSpotifies] = useState<any[]>([])
   const { register, handleSubmit, getValues } = useForm<Inputs>();
+
   const onSubmit = (data: any) => {
     const url = `mailto:${getValues("email")}?subject=${getValues(
       "nama"
     )}&body=${getValues("subjek")}&body=${getValues("pesan")}`;
     window.open(url, "_blank");
   };
+
+  const getBlog = async () => {
+    const _res = await axios.get("https://api.medselaras.com/api/blog").then((res) => res.data.data.data)
+    const covers = _res.map((artikel: { cover: any; slug: any }) => {
+        return {
+            image : artikel.cover,
+            link : "/blog/" + artikel.slug
+        }
+    })
+    setBlogs(covers)
+  }
+
+  const getInstagram = async () => {
+    const _res = await axios.get("https://api.medselaras.com/api/instagram").then(res => res.data.data.data)
+    const covers = _res.map((ig: { imageUrl: any; url: any }) => {
+        return {
+            image : ig.imageUrl,
+            link : ig.url
+        }
+    } )
+    setInstagrams(covers)
+  }
+
+  const getSpotify = async () => {
+    const _res = await axios.get("https://api.medselaras.com/api/spotify").then(res => res.data.data.data)
+    console.log(_res)
+    setSpotifies(_res)
+  }
+
+  useEffect(()=> {
+    getBlog();
+    getInstagram();
+    getSpotify();
+  }, [])
+
+
   return (
     <Layout>
       <main>
@@ -170,15 +211,18 @@ export default function Landingpage() {
                   },
                 }}
               >
-                {arsipInstagram.map(({ src }, index) => (
+                {instagrams.map((instagram : any, index) => (
                   <SwiperSlide key={index}>
-                    <NextImage
-                      src={src}
-                      width="100%"
-                      height="100%"
-                      alt="/"
-                      layout="responsive"
-                    />
+                    <Link href={instagram.link}>
+                      <NextImage
+                        src={instagram.image}
+                        width="100%"
+                        height="100%"
+                        alt="/"
+                        layout="responsive"
+                        className="cursor-pointer"
+                      />
+                    </Link>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -224,15 +268,18 @@ export default function Landingpage() {
                   },
                 }}
               >
-                {arsipInstagram.map(({ src }, index) => (
+                {blogs.map((blog : any, index : number) => (
                   <SwiperSlide key={index}>
-                    <NextImage
-                      src={src}
-                      width="100%"
-                      height="100%"
-                      alt="/"
-                      layout="responsive"
-                    />
+                    <Link href={blog.link}>
+                      <NextImage
+                        src={blog.image}
+                        width="100%"
+                        height="100%"
+                        alt="/"
+                        layout="responsive"
+                        className="cursor-pointer"
+                      />
+                    </Link>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -251,51 +298,37 @@ export default function Landingpage() {
                   Obcaecati laudantium deserunt unde corporis culpa voluptatum
                   minus ex consequuntur suscipit id in nam esse libero nostrum
                 </p>
-                <div className="mt-5 p-3 rounded-2xl justify-center bg-black flex flex-row lg:inline-flex gap-2">
-                  <BsSpotify className="text-green-400  bg-white rounded-2xl self-center" />
-                  <p className="text-white font-bold text-base">
-                    Dengarkan Sekarang di Spotify
-                  </p>
-                </div>
+                <Link href="https://open.spotify.com/show/3ryqxrMgIF6rpfRIAgdevh?si=053f87febf68435a" target="_blank">
+                  <div className="mt-5 p-3 rounded-2xl justify-center bg-black flex flex-row lg:inline-flex gap-2 cursor-pointer">
+                    <BsSpotify className="text-green-400  bg-white rounded-2xl self-center" />
+                    <p className="text-white font-bold text-base">
+                      Dengarkan Sekarang di Spotify
+                    </p>
+                  </div>
+                </Link>
               </div>
 
               <div className="sm:w-3/5 md:flex gap-8 hidden">
-                <div className="py-5 px-4 outline outline-1 outline-slate-300 rounded-md ">
-                  <NextImage
-                    alt="/"
-                    layout="responsive"
-                    height="25%"
-                    width="30%"
-                    src="/img/landingpage/podcast.png"
-                  />
-                  <div className="pt-5">
-                    <h1 className="font-bold text-sm lg:text-base">
-                      Yang belum merdeka dari kita
-                    </h1>
-                    <p className="py-2 font-thin text-sm lg:text-base">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Natus, ad.
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-5 px-4 outline outline-1 outline-slate-300 rounded-md">
-                  <NextImage
-                    layout="responsive"
-                    alt="/"
-                    height="25%"
-                    width="30%"
-                    src="/img/landingpage/podcast.png"
-                  />
-                  <div className="pt-4">
-                    <h1 className="font-bold text-sm lg:text-base ">
-                      Yang belum merdeka dari kita
-                    </h1>
-                    <p className="pt-2 font-thin text-sm lg:text-base">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Natus, ad.
-                    </p>
-                  </div>
-                </div>
+                {
+                  spotifies[0] &&
+                    <div className="py-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-[300]">
+                        <NextImage alt="/" layout='responsive' height="25%" width ="30%" src="/img/landingpage/podcast.png"/>
+                        <div className='pt-5'>
+                            <h1 className='font-bold text-sm lg:text-base'>{spotifies[0].title}</h1>
+                            <p className='py-2 font-thin text-sm lg:text-base'>{spotifies[0].description.slice(0,200)}</p>
+                        </div>
+                    </div>
+                }
+                {
+                    spotifies[1] &&
+                    <div className="pt-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-[300]">
+                        <NextImage layout="responsive" alt="/" height="25%" width ="30%" src="/img/landingpage/podcast.png"/>
+                        <div className='pt-4'>
+                            <h1 className='font-bold text-sm lg:text-base '>{spotifies[1].title}</h1>
+                            <p className='pt-2 font-thin text-sm lg:text-base'>{spotifies[1].description.slice(0,200)}</p>
+                        </div>
+                    </div>
+                }
               </div>
             </Animation>
           </section>

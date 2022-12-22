@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <div className="w-full bg-white relative lg:h-[300px] px-14 py-8">
+        <div className="w-full bg-white relative lg:h-[350px] px-14 py-8">
             <div className='z-20  left-0  lg:bg-transparent lg:w-200 lg:left-0 ease-out delay-150 duration-200 lg:absolute lg:top-10 lg:inset-x-0 mx-auto'>
                 <div className='flex flex-col justify-start items-center '>
                     <div className='py-3 text-center pb-4 w-full'>
@@ -15,7 +15,7 @@ export default function Footer() {
                             <div className=''>
                                 <Image src={logo} alt ="" />
                             </div>
-                            <div className='flex gap-6'>
+                            <div className='flex gap-6 items-center'>
                                 <BsInstagram size={24} />
                                 <BsTwitter size={24} />
                                 <BsLinkedin size={24} />
@@ -67,7 +67,7 @@ export default function Footer() {
                                     <h3 className='text-base text-black font-semibold '>Kontak</h3>
                                 </div>
                             </div>
-                            <div className=' gap-6 hidden lg:flex'>
+                            <div className=' gap-6 hidden lg:flex lg:pr-14'>
                                 <BsInstagram size={24} />
                                 <BsTwitter size={24} />
                                 <BsLinkedin size={24} />

@@ -159,7 +159,7 @@ export default function Instagram() {
                     <div className='mt-3'>
                         <label htmlFor="description" className='font-bold'>Description Spotify</label>
                         <div className='flex flex-row relative overflow-hidden pb-3 mt-2'>
-                            <input required type="text" id="description" className='rounded-md outline-1 border border-slate-300 text-md p-2 grow-[2]' />
+                            <input required type="text" id="description" maxLength={200} className='rounded-md outline-1 border border-slate-300 text-md p-2 grow-[2]' />
                         </div>
                     </div>
                     <div className='flex justify-end'>
@@ -178,14 +178,14 @@ export default function Instagram() {
                 { Object.entries(allLink).map((data => {
                     let spotify : any = data
                         return (
-                            <div key={spotify[0]} className="bg-white p-3 w-[250px] my-3 mx-auto sm:mx-1" >
+                            <div key={spotify[0]} className="bg-white p-3 w-[300px] my-3 mx-auto sm:mx-1" >
                                 <div>
                                     <a className='rounded-md' href={spotify[1].url} target="_blank" rel="noreferrer" >
-                                        <div className='border border-1 rounded-md border-slate-400 w-[200px] h-[200px] relative mx-autodfasdk'>
+                                        <div className='border border-1 rounded-md border-slate-400 w-[200px] h-[200px] relative mx-auto'>
                                             <Image  className="object-cover rounded-md"  src={spotify[1].image} layout="fill" objectFit="cover"  />
                                         </div>
                                         <p className='font-bold'>{spotify[1].title}</p>
-                                        <p>{spotify[1].desc.slice(0, 200) + " ..."}</p>
+                                        <p>{spotify[1].desc.slice(0, 200)}</p>
                                     </a>
                                     <FaTrashAlt className=' my-3 mx-auto hover:text-red-500 cursor-pointer' onClick={() => handleDelete(data[0])} />
                                 </div>

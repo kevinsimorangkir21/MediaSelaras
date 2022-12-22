@@ -7,7 +7,7 @@ import Link from "next/link";
 import Footer from "@/components/NavbarFooter/Footer";
 import {Animation} from "@/components/Animation"
 import axios from "axios";
-export default function artikel() {
+export default function Artikel() {
   const [ isLoading, setLoading] = useState<boolean>(true)
   const [ blogs, setBlogs ] = useState<any[]>([])
   const [ blog, setBlog ] = useState<any>({})
@@ -19,7 +19,6 @@ export default function artikel() {
   }
 
   useEffect(() => {
-      setLoading(true)
       getBlog().then(() => {
         setLoading(false)
       })
@@ -101,8 +100,8 @@ export default function artikel() {
               </div>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 md:gap-11 bg-white mt-3 sm:pt-4 lg:pt-6  sm:max-w-3xl md:max-w-5xl lg:max-w-7xl sm:m-auto">
                 {
-                  blogs.map((blogData : any) => {
-                      return  <div className='flex sm:flex-col sm:justify-center mt-3 sm:mt-0 sm:p-4 sm:outline sm:outline-1 outline-slate-300 rounded-md'>
+                  blogs.map((blogData : any, index : number) => {
+                      return  <div key={index} className='flex sm:flex-col sm:justify-center mt-3 sm:mt-0 sm:p-4 sm:outline sm:outline-1 outline-slate-300 rounded-md'>
                                   <div className='w-[85px] sm:w-full sm:h-[200px] relative rounded-xl overflow-hidden'>
                                       <NextImage className='sm:hidden' src={blogData.cover} width="100%" height="100%" layout="responsive" alt="artikel-medselaras"/>
                                       <NextImage className="hidden sm:block" src={blogData.cover} width="100%" height="100%" layout="fill" objectFit='cover' alt="artikel-medselaras"/>

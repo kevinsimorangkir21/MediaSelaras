@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/future/image'
-import medsel from '~/public/img/Logo.svg'
+import medsel from '../../public/img/Logo.svg'
 export default function Comingsoonpage () {
   return (
     <div className='w-full h-screen'>

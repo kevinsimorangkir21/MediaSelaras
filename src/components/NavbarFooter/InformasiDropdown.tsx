@@ -31,7 +31,6 @@ export default function Informasi() {
               {({ active }) => (
                 <a
                   href="https://open.spotify.com/show/3ryqxrMgIF6rpfRIAgdevh?si=44f675f5e4b649bb"
-                  target="_blank"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'

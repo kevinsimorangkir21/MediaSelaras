@@ -14,7 +14,6 @@ export default function SideNavbar() {
     const [cookies, ,removeCookie] = useCookies(['token']);
     const router = useRouter()
     async function handleLogout(event: React.MouseEvent<HTMLDivElement, MouseEvent>){
-        console.log("tests");
         const res = await axios.post("https://api.medselaras.com/api/logout", {},
             {
                 headers: {

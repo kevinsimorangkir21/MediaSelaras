@@ -25,7 +25,6 @@ export default function BlogView() {
             }}
         )
         .then(res => {
-            console.log(res.data.data.data)
             setAllBlog(res.data.data.data)
         })
     }

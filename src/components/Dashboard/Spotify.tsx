@@ -61,7 +61,6 @@ export default function Instagram() {
             title : event.target.title.value,
             description : event.target.description.value
         }
-        console.log(data)
         const response = await axios.post("https://api.medselaras.com/api/spotify",
             body,
             {headers: {

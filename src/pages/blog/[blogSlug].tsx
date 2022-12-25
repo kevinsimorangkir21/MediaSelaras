@@ -26,7 +26,6 @@ export default function BlogDetail() {
 
     const getBlog = async () => {
         const _res =  await axios.get("https://api.medselaras.com/api/blog/" + blogSlug ).then(res => res.data.data.data[0]).catch((res) => {
-            console.log("test");
             setFound(false);
         })
  

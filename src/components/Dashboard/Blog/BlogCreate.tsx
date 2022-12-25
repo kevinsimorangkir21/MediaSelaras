@@ -25,7 +25,6 @@ export default function CreateBlog() {
     }
 
     const uploadToClient = (event : any) => {
-      console.log(event)
       if (event.target.files && event.target.files[0]) {
         const i : Blob = event.target.files[0];
         setImage(i);
@@ -60,8 +59,6 @@ export default function CreateBlog() {
             return "Failed upload image"
         }
 
-
-        console.log(event.target)
         const data = {
           title: event.target.title.value,
           description: event.target.description.value,
@@ -91,7 +88,6 @@ export default function CreateBlog() {
           setOpen(true)
           return res;
         })
-        console.log(response)
         return response;
       }
     

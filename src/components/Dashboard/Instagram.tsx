@@ -143,7 +143,6 @@ export default function Instagram() {
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
                 { Object.entries(allLink).map((data => {
                     let ig : any = data
-                    console.log(ig)
    
                         return (
                             <div key={ig[0]} className=" bg-white p-3 w-fit my-3 mx-auto" >

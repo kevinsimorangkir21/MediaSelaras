@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { BsSpotify } from "react-icons/bs";
 import Layout from "@/components/Layout/Layout";
@@ -10,8 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css/pagination";
 import { useForm } from "react-hook-form";
-import { motion } from "framer-motion";
-import { arsipInstagram, komunitas } from "@/lib/data/homepage";
+import { komunitas } from "@/lib/data/homepage";
 import axios from "axios";
 
 type Inputs = {

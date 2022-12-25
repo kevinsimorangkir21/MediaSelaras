@@ -1,34 +1,19 @@
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import Link from "next/link";
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import Link from 'next/link'
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+
+function classNames(...classes : string[]) {
+  return classes.filter(Boolean).join(' ')
 }
 
-export default function TentangKami() {
+export default function Informasi() {
   return (
-    <Menu as="div" className="relative inline-block text-left z-100">
+    <Menu as="div" className="relative inline-block text-left z-50">
       <div>
         <Menu.Button className="group inline-flex w-full justify-center items-center border-gray-300 bg-transparant">
-          <h3 className="text-base text-slate-500 group-hover:text-black">
-            Tentang Kami
-          </h3>
-          <svg
-            className=" w-4 h-4 ml-3 text-slate-500 group-hover:text-black"
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
+            <h3 className='text-base text-slate-500 group-hover:text-black'>Informasi</h3>
+            <svg className=" w-4 h-4 ml-3 text-slate-500 group-hover:text-black" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </Menu.Button>
       </div>
 
@@ -46,32 +31,28 @@ export default function TentangKami() {
             <Menu.Item>
               {({ active }) => (
                 <Link href="/tentang-medsel">
-                  <p
-                    className={classNames(
-                      active
-                        ? ""
-                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900",
-                      "block px-4 py-2 text-sm hover:cursor-pointer"
-                    )}
-                  >
-                    Tentang Medsel
-                  </p>
+                <p
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100'
+                  )}
+                >
+                  Tentang Medsel
+                </p>
                 </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link href="/struktur-komunitas">
-                  <p
-                    className={classNames(
-                      active
-                        ? "bg-gray-100 text-gray-900"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900",
-                      "block px-4 py-2 text-sm cursor-pointer"
+                <Link href="/struktur-komunitas" >
+                <p
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100'
                     )}
-                  >
-                    Struktur Komunitas
-                  </p>
+                    >
+                  Struktur Komuntias
+                </p>
                 </Link>
               )}
             </Menu.Item>
@@ -79,5 +60,5 @@ export default function TentangKami() {
         </Menu.Items>
       </Transition>
     </Menu>
-  );
+  )
 }

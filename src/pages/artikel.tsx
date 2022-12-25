@@ -7,6 +7,7 @@ import Link from "next/link";
 import Footer from "@/components/NavbarFooter/Footer";
 import {Animation} from "@/components/Animation"
 import axios from "axios";
+import { Date } from "@/lib/date";
 export default function Artikel() {
   const [ isLoading, setLoading] = useState<boolean>(true)
   const [ blogs, setBlogs ] = useState<any[]>([])
@@ -70,11 +71,11 @@ export default function Artikel() {
                       alt="medselaras artikel hero"
                     />
                   </div>
-                  <div className="sm:w-7/12 hidden sm:flex sm:justify-between sm:flex-col lg:py-4">
+                  <div className="sm:w-7/12 hidden sm:flex sm:gap-y-3 sm:flex-col lg:py-4 self-center">
                     <h2 className="text-base sm:text-xs md:text-base lg:text-xl font-extralight text-slate-500 pb-1">
-                      { blog.day + ", " + blog.date }
+                      { blog.day + ", " + Date(blog.date) }
                     </h2>
-                    <p className="sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-10">
+                    <p className="sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-10 sm:pb-5 ">
                       { blog.title }
                     </p>
                     <p className="text-base sm:text-xs md:text-base lg:text-lg text-justify">

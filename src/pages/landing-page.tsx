@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import { useForm } from "react-hook-form";
 import { komunitas } from "@/lib/data/homepage";
 import axios from "axios";
+import { Date } from "@/lib/date";
 
 type Inputs = {
   nama: string;
@@ -23,7 +24,7 @@ type Inputs = {
 export default function Landingpage() {
   const [blogs, setBlogs] = useState([]);
   const [instagrams, setInstagrams] = useState([]);
-  const [spotifies, setSpotifies] = useState<any[]>([])
+  const [spotifies, setSpotifies] = useState<any[]>([]);
   const { register, handleSubmit, getValues } = useForm<Inputs>();
 
   const onSubmit = (data: any) => {
@@ -34,38 +35,54 @@ export default function Landingpage() {
   };
 
   const getBlog = async () => {
-    const _res = await axios.get("https://api.medselaras.com/api/blog").then((res) => res.data.data.data)
-    const covers = _res.map((artikel: { cover: any; slug: any }) => {
+    const _res = await axios
+      .get("https://api.medselaras.com/api/blog")
+      .then((res) => res.data.data.data);
+    const covers = _res.map(
+      (artikel: {
+        cover: any;
+        slug: any;
+        date: any;
+        title: any;
+        description: any;
+      }) => {
         return {
-            image : artikel.cover,
-            link : "/blog/" + artikel.slug
-        }
-    })
-    setBlogs(covers)
-  }
+          image: artikel.cover,
+          link: "/blog/" + artikel.slug,
+          title: artikel.title,
+          date: Date(artikel.date),
+          description: artikel.description,
+        };
+      }
+    );
+    setBlogs(covers);
+  };
 
   const getInstagram = async () => {
-    const _res = await axios.get("https://api.medselaras.com/api/instagram").then(res => res.data.data.data)
+    const _res = await axios
+      .get("https://api.medselaras.com/api/instagram")
+      .then((res) => res.data.data.data);
     const covers = _res.map((ig: { imageUrl: any; url: any }) => {
-        return {
-            image : ig.imageUrl,
-            link : ig.url
-        }
-    } )
-    setInstagrams(covers)
-  }
+      return {
+        image: ig.imageUrl,
+        link: ig.url,
+      };
+    });
+    setInstagrams(covers);
+  };
 
   const getSpotify = async () => {
-    const _res = await axios.get("https://api.medselaras.com/api/spotify").then(res => res.data.data.data)
-    setSpotifies(_res)
-  }
+    const _res = await axios
+      .get("https://api.medselaras.com/api/spotify")
+      .then((res) => res.data.data.data);
+    setSpotifies(_res);
+  };
 
-  useEffect(()=> {
+  useEffect(() => {
     getBlog();
     getInstagram();
     getSpotify();
-  }, [])
-
+  }, []);
 
   return (
     <Layout>
@@ -73,9 +90,7 @@ export default function Landingpage() {
         <Navbar />
         <div className="w-full min-h-screen bg-white overflow-hidden">
           <section className="Landing Page">
-            <Animation
-              className="flex sm:flex-row flex-col m-auto  lg:max-w-7xl lg:gap-14 p-7 lg:p-7"
-            >
+            <Animation className="flex sm:flex-row flex-col m-auto  lg:max-w-7xl lg:gap-14 p-7 lg:p-7">
               <div className="self-center ">
                 <h1 className="font-bold lg:text-5xl text-3xl lg:leading-snug">
                   Wadah pengedukasian konten kreatif terkait isu-isu sosial
@@ -105,9 +120,7 @@ export default function Landingpage() {
             </Animation>
           </section>
           <section className="Komunitas">
-            <Animation
-              className="lg:py-16 flex max-w-7xl flex-col m-auto lg:px-14 p-7"
-            >
+            <Animation className="lg:py-16 flex max-w-7xl flex-col m-auto lg:px-14 p-7">
               <h1 className="sm:text-center md:text-3xl text-xl w-3/4 sm:w-full pb-10 font-bold lg:pb-6">
                 Komunitas yang telah berkolaborasi dengan Media Selaras
               </h1>
@@ -128,9 +141,7 @@ export default function Landingpage() {
             </Animation>
           </section>
           <section className="Tentang Medsel">
-            <Animation
-              className="relative w-full"
-            >
+            <Animation className="relative w-full">
               <div className="flex flex-row items-start m-auto max-w-7xl">
                 <NextImage
                   src="/img/landingpage/bg-tentangmedsel.png"
@@ -175,10 +186,8 @@ export default function Landingpage() {
             </Animation>
           </section>
           <section className="Arsip Instagram">
-            <Animation
-              className="max-w-7xl m-auto p-7 relative"
-            >
-              <div className="mb-4">
+            <Animation className="max-w-7xl m-auto p-7 relative">
+              <div className="sm:mb-4 mb-2 ">
                 <h1 className="font-bold lg:text-4xl text-xl">
                   Arsip Terakhir
                   <br /> Instagram
@@ -209,8 +218,11 @@ export default function Landingpage() {
                   },
                 }}
               >
-                {instagrams.map((instagram : any, index) => (
-                  <SwiperSlide key={index} className="rounded-xl overflow-hidden">
+                {instagrams.map((instagram: any, index) => (
+                  <SwiperSlide
+                    key={index}
+                    className="rounded-xl overflow-hidden"
+                  >
                     <Link href={instagram.link}>
                       <NextImage
                         src={instagram.image}
@@ -227,10 +239,8 @@ export default function Landingpage() {
             </Animation>
           </section>
           <section className="Arsip Artikel">
-            <Animation
-              className="max-w-7xl m-auto p-7 pt-10 sm:pt-16 relative"
-            >
-              <div className="mb-4 flex justify-between">
+            <Animation className="max-w-7xl m-auto p-7 pt-10 sm:pt-16 relative">
+              <div className="sm:mb-4 mb-2 flex justify-between">
                 <h1 className="font-bold lg:text-4xl text-xl">
                   Arsip Terakhir
                   <br /> Artikel
@@ -248,7 +258,7 @@ export default function Landingpage() {
                 }}
                 slidesPerView="auto"
                 modules={[Pagination, Autoplay]}
-                className="flex mx-w-7xl"
+                className="flex mx-w-7xl sm:px-5 sm:py-5"
                 autoplay={{ delay: 1500 }}
                 spaceBetween={10}
                 breakpoints={{
@@ -266,9 +276,9 @@ export default function Landingpage() {
                   },
                 }}
               >
-                {blogs.map((blog : any, index : number) => (
-                  <SwiperSlide key={index} className="rounded-xl overflow-hidden">
-                    <Link href={blog.link}>
+                {blogs.map((blog: any, index: number) => (
+                  <Link href={blog.link} key={index}>
+                    <SwiperSlide className="rounded-xl overflow-hidden">
                       <NextImage
                         src={blog.image}
                         width="100%"
@@ -277,17 +287,26 @@ export default function Landingpage() {
                         layout="responsive"
                         className="cursor-pointer"
                       />
-                    </Link>
-                  </SwiperSlide>
+                      <div className="body flex flex-col pt-4 gap-y-2">
+                        <p className="text-xs text-slate-500 font-light">
+                          {blog.date}
+                        </p>
+                        <p className="font-bold text-base lg:text-2xl md:text-xl sm:pb-2 md:pb-3">
+                          {blog.title}
+                        </p>
+                        <p className="lg:text-base text-sm text-slate-500 font-light text-justify">
+                          {blog.description}
+                        </p>
+                      </div>
+                    </SwiperSlide>
+                  </Link>
                 ))}
               </Swiper>
             </Animation>
           </section>
           <section className="Media Selaras Podcast">
-            <Animation
-              className="w-full flex gap-14  lg:max-w-7xl m-auto justify-center pt-14 p-7 "
-            >
-              <div className="md:w-2/5 w-full m-auto lg:py-7 p-7 ">
+            <Animation className="w-full flex gap-14  lg:max-w-7xl m-auto justify-center md:pt-10 lg:pt-14 sm:p-7 ">
+              <div className="md:w-2/5 w-full m-auto lg:py-7 sm:p-7 py-2 sm:py-0 px-7 ">
                 <h1 className="lg:text-4xl text-xl font-bold pb-4 leading-normal">
                   Media Selaras Podcast (Suara Selaras)
                 </h1>
@@ -296,7 +315,10 @@ export default function Landingpage() {
                   Obcaecati laudantium deserunt unde corporis culpa voluptatum
                   minus ex consequuntur suscipit id in nam esse libero nostrum
                 </p>
-                <Link href="https://open.spotify.com/show/3ryqxrMgIF6rpfRIAgdevh?si=053f87febf68435a" target="_blank">
+                <Link
+                  href="https://open.spotify.com/show/3ryqxrMgIF6rpfRIAgdevh?si=053f87febf68435a"
+                  target="_blank"
+                >
                   <div className="mt-5 p-3 rounded-2xl justify-center bg-black flex flex-row lg:inline-flex gap-2 cursor-pointer">
                     <BsSpotify className="text-green-400  bg-white rounded-2xl self-center" />
                     <p className="text-white font-bold text-base">
@@ -307,33 +329,49 @@ export default function Landingpage() {
               </div>
 
               <div className="sm:w-3/5 md:flex gap-8 hidden">
-                {
-                  spotifies[0] &&
-                    <div className="py-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-[300]">
-                        <NextImage alt="/" layout='responsive' height="25%" width ="30%" src="/img/landingpage/podcast.png"/>
-                        <div className='pt-5'>
-                            <h1 className='font-bold text-sm lg:text-base'>{spotifies[0].title}</h1>
-                            <p className='py-2 font-thin text-sm lg:text-base'>{spotifies[0].description.slice(0,200)}</p>
-                        </div>
+                {spotifies[0] && (
+                  <div className="py-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-[300]">
+                    <NextImage
+                      alt="/"
+                      layout="responsive"
+                      height="25%"
+                      width="30%"
+                      src="/img/landingpage/podcast.png"
+                    />
+                    <div className="pt-5">
+                      <h1 className="font-bold text-sm lg:text-base">
+                        {spotifies[0].title}
+                      </h1>
+                      <p className="py-2 font-thin text-sm lg:text-base">
+                        {spotifies[0].description.slice(0, 200)}
+                      </p>
                     </div>
-                }
-                {
-                    spotifies[1] &&
-                    <div className="pt-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-[300]">
-                        <NextImage layout="responsive" alt="/" height="25%" width ="30%" src="/img/landingpage/podcast.png"/>
-                        <div className='pt-4'>
-                            <h1 className='font-bold text-sm lg:text-base '>{spotifies[1].title}</h1>
-                            <p className='pt-2 font-thin text-sm lg:text-base'>{spotifies[1].description.slice(0,200)}</p>
-                        </div>
+                  </div>
+                )}
+                {spotifies[1] && (
+                  <div className="pt-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-[300]">
+                    <NextImage
+                      layout="responsive"
+                      alt="/"
+                      height="25%"
+                      width="30%"
+                      src="/img/landingpage/podcast.png"
+                    />
+                    <div className="pt-4">
+                      <h1 className="font-bold text-sm lg:text-base ">
+                        {spotifies[1].title}
+                      </h1>
+                      <p className="pt-2 font-thin text-sm lg:text-base">
+                        {spotifies[1].description.slice(0, 200)}
+                      </p>
                     </div>
-                }
+                  </div>
+                )}
               </div>
             </Animation>
           </section>
           <section className="Kontak">
-            <Animation
-              className="flex w-full max-w-7xl m-auto lg:pt-14 p-7"
-            >
+            <Animation className="flex w-full max-w-7xl m-auto lg:pt-14 p-7">
               <div className="lg:w-1/2 lg:basis-1/2 w-full">
                 <div className="lg:mt-20 mt-10">
                   <h1 className="lg:text-4xl text-xl font-bold">Kontak</h1>

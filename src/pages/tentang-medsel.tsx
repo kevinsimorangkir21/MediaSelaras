@@ -12,22 +12,18 @@ import photoImpiSelaras from "~/img/about/photo-impi-selaras.png";
 import photoAwarding from "~/img/about/photo-awarding.png";
 import { Animation } from "@/components/Animation";
 import { motion } from "framer-motion";
+import Layout from "@/components/Layout/Layout";
 export default function TentangMedsel() {
   return (
-    <>
+    <Layout>
+      <main>
       <Navbar />
       <Animation className="bg-[#FAE1C7] relative overflow-hidden bg-[url(../../public/img/about/bg-kotak.png)] bg-repeat-x">
-        <div className="absolute -top-8 -left-14 z-20 w-64">
-          <Image src={ornamen1} alt="" />
-        </div>
-        <div className="absolute -bottom-32 -right-36 z-20 w-64">
-          <Image alt="" src={ornamen2} />
-        </div>
-        <div className="relative z-40 lg:flex lg:py-12">
-          <div className="w-72 mx-auto pt-12 lg:w-[800px] lg:p-0 lg:mx-14">
+        <div className="relative z-40 lg:flex lg:py-12 overflow-hidden">
+          <div className="w-72 mx-auto pt-12 lg:w-[800px] lg:p-0 lg:mx-14 z-50 relative">
             <Image alt="" src={penghargaan} layout="responsive" />
           </div>
-          <div className="text-center lg:my-auto lg:text-left lg:pr-10">
+          <div className="text-center lg:my-auto lg:text-left lg:pr-10 z-50 relative">
             <p className="hidden text-sm lg:block xl:text-lg">Penghargaan</p>
             <p className="px-20 text-2xl font-bold lg:px-0 lg:text-3xl xl:text-4xl">
               Media Selaras Berhasil dinobatkan sebagai komunitas terfavorit di
@@ -36,6 +32,12 @@ export default function TentangMedsel() {
             <p className="text-sm py-8 xl:text-lg">
               Pada acara indonesia youth potensial fest 2021
             </p>
+          </div>
+          <div className="absolute -top-8 -left-14 z-0 w-64">
+            <Image src={ornamen1} alt="" />
+          </div>
+          <div className="absolute -bottom-32 -right-36 z-0 w-64 lg:hidden">
+            <Image alt="" src={ornamen2} />
           </div>
         </div>
         <div className="bg-white pt-10">
@@ -116,7 +118,7 @@ export default function TentangMedsel() {
             <p className="text-center text-3xl font-bold mt-14 mb-8 lg:hidden">
               Awarding Night
             </p>
-            <div className="text-center relative w-96 mx-auto lg:w-1/2 lg:pr-12">
+            <div className="text-center relative w-80 md:w-96 mx-auto lg:w-1/2 lg:pr-12">
               <Image
                 alt=""
                 src={photoAwarding}
@@ -149,7 +151,7 @@ export default function TentangMedsel() {
           <p className="text-center text-3xl font-bold  mb-8 lg:hidden">
             Berbagi Cerita
           </p>
-          <div className="text-center relative w-96 mx-auto lg:w-1/2 lg:pl-12">
+          <div className="text-center relative  w-80 md:w-96  mx-auto lg:w-1/2 lg:pl-12">
             <Image
               alt=""
               src={photoBerbagiCerita}
@@ -182,7 +184,7 @@ export default function TentangMedsel() {
           <p className="text-center text-3xl font-bold mt-14 mb-8 lg:hidden">
             Bergerak Selaras
           </p>
-          <div className="text-center relative w-96 mx-auto lg:w-1/2 lg:pr-12">
+          <div className="text-center relative  w-80 md:w-96  mx-auto lg:w-1/2 lg:pr-12">
             <Image
               alt=""
               src={photoBergerakSelaras}
@@ -215,7 +217,7 @@ export default function TentangMedsel() {
           <p className="text-center text-3xl font-bold mt-14 mb-8 lg:hidden">
             Impi Selaras
           </p>
-          <div className="text-center relative w-96 mx-auto lg:w-1/2 lg:pl-12">
+          <div className="text-center relative  w-80 md:w-96  mx-auto lg:w-1/2 lg:pl-12">
             <Image
               alt=""
               src={photoImpiSelaras}
@@ -239,6 +241,7 @@ export default function TentangMedsel() {
         </motion.div>
       </div>
       <Footer />
-    </>
+    </main>
+    </Layout>
   );
 }

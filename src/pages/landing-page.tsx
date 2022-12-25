@@ -27,9 +27,9 @@ export default function Landingpage() {
   const { register, handleSubmit, getValues } = useForm<Inputs>();
 
   const onSubmit = (data: any) => {
-    const url = `mailto:${getValues("email")}?subject=${getValues(
-      "nama"
-    )}&body=${getValues("subjek")}&body=${getValues("pesan")}`;
+    const url = `mailto:Techmediaselaras@gmail.com?subject=${getValues(
+      "subjek"
+    )}&body=${getValues("pesan")}`;
     window.open(url, "_blank");
   };
 
@@ -57,7 +57,6 @@ export default function Landingpage() {
 
   const getSpotify = async () => {
     const _res = await axios.get("https://api.medselaras.com/api/spotify").then(res => res.data.data.data)
-    console.log(_res)
     setSpotifies(_res)
   }
 
@@ -211,7 +210,7 @@ export default function Landingpage() {
                 }}
               >
                 {instagrams.map((instagram : any, index) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide key={index} className="rounded-xl overflow-hidden">
                     <Link href={instagram.link}>
                       <NextImage
                         src={instagram.image}
@@ -268,7 +267,7 @@ export default function Landingpage() {
                 }}
               >
                 {blogs.map((blog : any, index : number) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide key={index} className="rounded-xl overflow-hidden">
                     <Link href={blog.link}>
                       <NextImage
                         src={blog.image}

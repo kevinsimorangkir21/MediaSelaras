@@ -224,14 +224,16 @@ export default function Landingpage() {
                     className="rounded-xl overflow-hidden"
                   >
                     <Link href={instagram.link}>
-                      <NextImage
-                        src={instagram.image}
-                        width="100%"
-                        height="100%"
-                        alt="/"
-                        layout="responsive"
-                        className="cursor-pointer"
-                      />
+                      <div className="rounded-lg overflow-hidden">
+                        <NextImage
+                          src={instagram.image}
+                          width="100%"
+                          height="100%"
+                          alt="/"
+                          layout="responsive"
+                          className="cursor-pointer"
+                        />
+                      </div>
                     </Link>
                   </SwiperSlide>
                 ))}
@@ -260,7 +262,7 @@ export default function Landingpage() {
                 modules={[Pagination, Autoplay]}
                 className="flex mx-w-7xl sm:px-5 sm:py-5"
                 autoplay={{ delay: 1500 }}
-                spaceBetween={10}
+                spaceBetween={18}
                 breakpoints={{
                   280: {
                     slidesPerView: 1,
@@ -278,15 +280,16 @@ export default function Landingpage() {
               >
                 {blogs.map((blog: any, index: number) => (
                   <Link href={blog.link} key={index}>
-                    <SwiperSlide className="rounded-xl overflow-hidden">
-                      <NextImage
-                        src={blog.image}
-                        width="100%"
-                        height="100%"
-                        alt="/"
-                        layout="responsive"
-                        className="cursor-pointer"
-                      />
+                    <SwiperSlide className="rounded-xl overflow-hidden cursor-pointer">
+                      <div className="rounded-xl overflow-hidden">
+                        <NextImage
+                          src={blog.image}
+                          width="100%"
+                          height="100%"
+                          alt="/"
+                          layout="responsive"
+                        />
+                      </div>
                       <div className="body flex flex-col pt-4 gap-y-2">
                         <p className="text-xs text-slate-500 font-light">
                           {blog.date}
@@ -330,14 +333,16 @@ export default function Landingpage() {
 
               <div className="sm:w-3/5 md:flex gap-8 hidden">
                 {spotifies[0] && (
-                  <div className="py-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-[300]">
-                    <NextImage
-                      alt="/"
-                      layout="responsive"
-                      height="25%"
-                      width="30%"
-                      src="/img/landingpage/podcast.png"
-                    />
+                  <div className="py-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-xs mx-auto">
+                    <div className="rounded-lg overflow-hidden">
+                      <NextImage
+                        alt="/"
+                        layout="responsive"
+                        height="100%"
+                        width="100%"
+                        src={spotifies[0].imageUrl}
+                      />
+                    </div>
                     <div className="pt-5">
                       <h1 className="font-bold text-sm lg:text-base">
                         {spotifies[0].title}
@@ -349,14 +354,16 @@ export default function Landingpage() {
                   </div>
                 )}
                 {spotifies[1] && (
-                  <div className="pt-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-[300]">
-                    <NextImage
-                      layout="responsive"
-                      alt="/"
-                      height="25%"
-                      width="30%"
-                      src="/img/landingpage/podcast.png"
-                    />
+                  <div className="pt-5 px-4 outline outline-1 outline-slate-300 rounded-md max-w-xs mx-auto">
+                    <div className="rounded-lg overflow-hidden">
+                      <NextImage
+                        layout="responsive"
+                        alt="/"
+                        height="25%"
+                        width="30%"
+                        src={spotifies[1].imageUrl}
+                      />
+                    </div>
                     <div className="pt-4">
                       <h1 className="font-bold text-sm lg:text-base ">
                         {spotifies[1].title}

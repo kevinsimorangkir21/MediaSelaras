@@ -1,4 +1,5 @@
 const months = [
+  "",
   "Januari",
   "Februari",
   "Maret",
@@ -14,7 +15,6 @@ const months = [
 ];
 
 export const Date = (date: any) => {
-  console.log(date);
   const blogDate = date.split("-");
   const tanggal = parseInt(blogDate[2]);
   let bulan = blogDate[1];

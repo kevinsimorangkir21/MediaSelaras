@@ -105,13 +105,13 @@ export default function Artikel() {
                       return  <div key={index} >
                                 <Link href={"/blog/" + blogData.slug}>
                                   <div className='flex sm:flex-col sm:justify-center mt-3 sm:mt-0 sm:p-4 sm:outline sm:outline-1 outline-slate-300 rounded-md cursor-pointer'>
-                                    <div className='w-[85px] sm:w-full sm:h-[200px] relative rounded-xl overflow-hidden'>
+                                    <div className='w-[20%] sm:w-full sm:h-[200px] relative rounded-xl overflow-hidden'>
                                         <NextImage className='sm:hidden' src={blogData.cover} width="100%" height="100%" layout="responsive" alt="artikel-medselaras"/>
-                                        <NextImage className="hidden sm:block" src={blogData.cover} width="100%" height="100%" layout="fill" objectFit='cover' alt="artikel-medselaras"/>
+                                        <NextImage className="hidden sm:block" src={blogData.cover} width="100%" height="100%" layout="responsive" alt="artikel-medselaras"/>
                                     </div>
-                                    <div className='flex flex-col justify-between pl-3 sm:pl-0 sm:my-3 sm:gap-2'>
-                                        <h1 className='text-xs font-semibold md:text-xl lg:text-2xl'>{blogData.title}</h1>
-                                        <p className='text-[10px] font-extralight sm:order-first md:text-base lg:text-xl'>{blogData.day + ", " + Date(blogData.date)}</p>
+                                    <div className='w-[80%] sm:w-full flex flex-col justify-between pl-3 sm:pl-0 sm:my-3 sm:gap-2'>
+                                        <h1 className='text-sm font-semibold md:text-xl lg:text-2xl'>{blogData.title}</h1>
+                                        <p className='text-sm font-extralight sm:order-first md:text-base lg:text-xl'>{blogData.day + ", " + Date(blogData.date)}</p>
                                         <p className='hidden sm:block text-gray-500 lg:text-lg'>{blogData.description}</p>
                                     </div>
                                   </div>

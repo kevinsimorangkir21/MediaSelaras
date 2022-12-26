@@ -62,8 +62,12 @@ export default function Navbar() {
                             
           <Disclosure.Panel className="lg:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3 text-center">
-                <a className='text-slate-600 hover:bg-gray-200 hover:text-black block px-3 py-2 rounded-md text-base font-medium'>Beranda</a>
-                <a className='text-slate-600 hover:bg-gray-200 hover:text-black block px-3 py-2 rounded-md text-base font-medium'>Artikel</a>
+                <Link href="/">
+                  <a className='text-slate-600 hover:bg-gray-200 hover:text-black block px-3 py-2 rounded-md text-base font-medium'>Beranda</a>
+                </Link>
+                <Link href="/artikel">
+                  <a className='text-slate-600 hover:bg-gray-200 hover:text-black block px-3 py-2 rounded-md text-base font-medium'>Artikel</a>
+                </Link>
                 <div className='text-slate-600 hover:bg-gray-200 hover:text-black block px-3 py-2 rounded-md text-base font-medium'>
                     <Informasi />
                 </div>

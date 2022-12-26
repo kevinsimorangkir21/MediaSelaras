@@ -40,6 +40,7 @@ export default function Landingpage() {
       .then((res) => res.data.data.data);
     const covers = _res.map(
       (artikel: {
+        day: any;
         cover: any;
         slug: any;
         date: any;
@@ -52,9 +53,11 @@ export default function Landingpage() {
           title: artikel.title,
           date: Date(artikel.date),
           description: artikel.description,
+          day : artikel.day
         };
       }
     );
+    console.log(covers);
     setBlogs(covers);
   };
 
@@ -276,30 +279,32 @@ export default function Landingpage() {
                 }}
               >
                 {blogs.map((blog: any, index: number) => (
-                  <Link href={blog.link} key={index}>
-                    <SwiperSlide className="rounded-xl overflow-hidden cursor-pointer">
-                      <div className="rounded-xl overflow-hidden">
-                        <NextImage
-                          src={blog.image}
-                          width="100%"
-                          height="100%"
-                          alt="/"
-                          layout="responsive"
-                        />
+                  <SwiperSlide className="rounded-xl overflow-hidden cursor-pointer" key={index}>
+                    <Link href={blog.link} >
+                      <div>
+                        <div className="rounded-xl overflow-hidden">
+                          <NextImage
+                            src={blog.image}
+                            width="100%"
+                            height="100%"
+                            alt="/"
+                            layout="responsive"
+                          />
+                        </div>
+                        <div className="body flex flex-col pt-4 gap-y-2">
+                          <p className="text-sm text-slate-500 font-light">
+                            {blog.day + ", " + blog.date}
+                          </p>
+                          <p className="font-bold text-base lg:text-2xl md:text-xl sm:pb-2 md:pb-3">
+                            {blog.title}
+                          </p>
+                          <p className="lg:text-base text-sm text-slate-500 font-light text-justify">
+                            {blog.description}
+                          </p>
+                        </div>
                       </div>
-                      <div className="body flex flex-col pt-4 gap-y-2">
-                        <p className="text-xs text-slate-500 font-light">
-                          {blog.date}
-                        </p>
-                        <p className="font-bold text-base lg:text-2xl md:text-xl sm:pb-2 md:pb-3">
-                          {blog.title}
-                        </p>
-                        <p className="lg:text-base text-sm text-slate-500 font-light text-justify">
-                          {blog.description}
-                        </p>
-                      </div>
-                    </SwiperSlide>
-                  </Link>
+                    </Link>
+                  </SwiperSlide>
                 ))}
               </Swiper>
             </Animation>

@@ -9,6 +9,7 @@ import Footer from '../../components/NavbarFooter/Footer'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import { Date } from "@/lib/date";
 
 export default function BlogDetail() {
     const router = useRouter()
@@ -66,24 +67,23 @@ export default function BlogDetail() {
                     <div className='px-8 py-12 md:px-20'>
                         <div className='text-center'>
                             <h1 className='text-3xl font-semibold'>{blog.title}</h1>
-                            <p className='mt-6 text-slate-400'>{blog.day + ", " + blog.date}</p>
+                            <p className='mt-6 text-slate-400'>{blog.day + ", " + Date(blog.date)}</p>
                             <p className='text-slate-400'>Creator: {blog.author}</p>
                         </div>
                         <div className='pt-10'>
                             <div dangerouslySetInnerHTML={createMarkup()} />
                         </div>
                         <div className='pt-12'>
-                            <div className='flex justify-between border-b-2 pb-4 border-slate-300'>
-                                <p className='text-xl font-semibold lg:text-3xl'>Komentar</p>
-                                <div className='flex gap-2'>
-                                    <p className='text-xl text-slate-400'>Bagikan</p>
+                            <div className='flex justify-end '>
+                                {/* <p className='text-xl font-semibold lg:text-3xl'>Komentar</p> */}
+                                <div className='flex gap-2 items-center'>
                                     <AiOutlineWhatsApp className='self-center mt-1 text-xl' />
                                     <BsFacebook className='self-center mt-1 text-xl' />
                                     <AiOutlineInstagram className='self-center mt-1 text-xl' />
                                     <AiFillTwitterCircle className='self-center mt-1 text-xl' />
                                 </div>
                             </div>
-                            <div>
+                            {/* <div>
                                 <div className='flex mt-4'>
                                     <CgProfile className='self-center text-slate-600 text-[40px] mr-6' />
                                     <div>
@@ -117,28 +117,26 @@ export default function BlogDetail() {
                                     </div>
                                 </div>
                                 
-                            </div>
+                            </div> */}
                         </div>
                         <div className='pt-12 hidden lg:block'>
                             <p className='text-xl font-semibold pb-8 lg:text-3xl'>Artikel terbaru</p>
-                            <>
+                            <div className='px-16 grid grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-8 cursor-pointer'>
                             {
                                 blogs.map((blog : any, index : number) => {
-                                    return <div key={index} className='px-16 grid grid-cols-2 xl:grid-cols-3 justify-items-center gap-y-8 cursor-pointer'>
-                                                <div className='w-80'>
-                                                    <div className='w-80 h-48 relative'>
-                                                        <Image src={blog.cover} layout="fill" objectFit="cover" />
-                                                    </div>
-                                                    <div>
-                                                        <p className='text-slate-400 pt-2'>{blog.day + ", " + blog.date}</p>
-                                                        <p className='pt-2 font-semibold text-2xl'>{blog.title}</p>
-                                                        <p>{blog.description.slice(0,200)}</p>
-                                                    </div>
+                                    return  <div className='w-80' key={index} >
+                                                <div className='w-80 h-48 relative'>
+                                                    <Image src={blog.cover} layout="fill" objectFit="cover" />
+                                                </div>
+                                                <div>
+                                                    <p className='text-slate-400 pt-2'>{blog.day + ", " + blog.date}</p>
+                                                    <p className='pt-2 font-semibold text-2xl'>{blog.title}</p>
+                                                    <p>{blog.description.slice(0,200)}</p>
                                                 </div>
                                             </div>
                                 })
                             }
-                            </>
+                            </div>
                         </div>
                     </div>
                 </div>

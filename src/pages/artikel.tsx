@@ -49,7 +49,7 @@ export default function Artikel() {
                   Selamat Datang di Halaman Artikel Media Selaras!
                 </h1>
               </div>
-              <Link href="/blog/ini-slug-artikel">
+              <Link href={"/blog/" + blog.slug}>
                 <div className="sm:flex pt-10 pb-5 gap-10 cursor-pointer">
                   <div className="sm:w-5/12 w-full h-[200px] sm:h-full m-auto  rounded-2xl overflow-hidden relative">
                     <NextImage
@@ -102,16 +102,20 @@ export default function Artikel() {
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 md:gap-11 bg-white mt-3 sm:pt-4 lg:pt-6  sm:max-w-3xl md:max-w-5xl lg:max-w-7xl sm:m-auto">
                 {
                   blogs.map((blogData : any, index : number) => {
-                      return  <div key={index} className='flex sm:flex-col sm:justify-center mt-3 sm:mt-0 sm:p-4 sm:outline sm:outline-1 outline-slate-300 rounded-md'>
-                                  <div className='w-[85px] sm:w-full sm:h-[200px] relative rounded-xl overflow-hidden'>
-                                      <NextImage className='sm:hidden' src={blogData.cover} width="100%" height="100%" layout="responsive" alt="artikel-medselaras"/>
-                                      <NextImage className="hidden sm:block" src={blogData.cover} width="100%" height="100%" layout="fill" objectFit='cover' alt="artikel-medselaras"/>
+                      return  <div key={index} >
+                                <Link href={"/blog/" + blogData.slug}>
+                                  <div className='flex sm:flex-col sm:justify-center mt-3 sm:mt-0 sm:p-4 sm:outline sm:outline-1 outline-slate-300 rounded-md cursor-pointer'>
+                                    <div className='w-[85px] sm:w-full sm:h-[200px] relative rounded-xl overflow-hidden'>
+                                        <NextImage className='sm:hidden' src={blogData.cover} width="100%" height="100%" layout="responsive" alt="artikel-medselaras"/>
+                                        <NextImage className="hidden sm:block" src={blogData.cover} width="100%" height="100%" layout="fill" objectFit='cover' alt="artikel-medselaras"/>
+                                    </div>
+                                    <div className='flex flex-col justify-between pl-3 sm:pl-0 sm:my-3 sm:gap-2'>
+                                        <h1 className='text-xs font-semibold md:text-xl lg:text-2xl'>{blogData.title}</h1>
+                                        <p className='text-[10px] font-extralight sm:order-first md:text-base lg:text-xl'>{blogData.day + ", " + Date(blogData.date)}</p>
+                                        <p className='hidden sm:block text-gray-500 lg:text-lg'>{blogData.description}</p>
+                                    </div>
                                   </div>
-                                  <div className='flex flex-col justify-between pl-3 sm:pl-0 sm:my-3 sm:gap-2'>
-                                      <h1 className='text-xs font-semibold md:text-xl lg:text-2xl'>{blogData.title}</h1>
-                                      <p className='text-[10px] font-extralight sm:order-first md:text-base lg:text-xl'>{blogData.day + ", " + blogData.date}</p>
-                                      <p className='hidden sm:block text-gray-500 lg:text-lg'>{blogData.description}</p>
-                                  </div>
+                                </Link>
                               </div>
                   })
                 }

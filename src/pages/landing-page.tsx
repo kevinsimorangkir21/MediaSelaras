@@ -213,7 +213,9 @@ export default function Landingpage() {
                   600: {
                     slidesPerView: 3,
                   },
-         
+                  900: {
+                    slidesPerView: 4,
+                  },
                 }}
               >
                 {instagrams.map((instagram: any, index) => (

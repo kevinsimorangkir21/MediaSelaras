@@ -72,15 +72,15 @@ const founder = [
 
 const executive = [
   {
-    src: "/img/komunitas/executive/wafa.png",
-    nama: "Wafa",
-    jabatan: "Ketua Media Selaras 2022",
+    src: "/img/komunitas/executive/jasmine.png",
+    nama: "Nurul Jasmine Fathia",
+    jabatan: "Ketua Umum Media Selaras 2023",
     alt: "",
   },
   {
-    src: "/img/komunitas/executive/marwi.png",
-    nama: "Nyi Nyoman Marwiyati",
-    jabatan: "Wakil Media Selaras 2022",
+    src: "/img/komunitas/executive/ayu.png",
+    nama: "Ayu Nur Istiqomah",
+    jabatan: "Wakil Ketua Umum Media Selaras 2023",
     alt: "",
   },
 ];

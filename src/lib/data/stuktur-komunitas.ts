@@ -73,7 +73,7 @@ const founder = [
 const executive = [
   {
     src: "/img/komunitas/executive/jasmine.png",
-    nama: "Nurul Jasmine Fathia",
+    nama: "Nurul Jasmine",
     jabatan: "Ketua Umum Media Selaras 2023",
     alt: "",
   },

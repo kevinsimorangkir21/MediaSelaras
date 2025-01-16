@@ -2,7 +2,7 @@ import Navbar from "@/components/NavbarFooter/Navbar";
 import Footer from "@/components/NavbarFooter/Footer";
 import Image from "next/image";
 import penghargaan from "~/img/about/penghargaan.png";
-import bgKotak from "~/img/about/bg-kotak.png";
+// import bgKotak from "~/img/about/bg-kotak.png";
 import ornamen1 from "~/img/about/ornamen1.png";
 import ornamen2 from "~/img/about/ornamen2.png";
 import photoMedsel from "~/img/about/photo-medsel.png";
@@ -56,10 +56,9 @@ export default function TentangMedsel() {
             alt=""
             src={photoMedsel}
             title=""
-            width="100%"
-            height="100%"
             layout="responsive"
             objectFit="contain"
+            fill
           />
         </div>
         <div className="lg:w-1/2 px-8 md:px-16">
@@ -123,10 +122,9 @@ export default function TentangMedsel() {
                 alt=""
                 src={photoAwarding}
                 title=""
-                width="100%"
-                height="100%"
                 layout="responsive"
                 objectFit="contain"
+                fill
               />
             </div>
             <div className="lg:w-1/2 lg:my-auto">
@@ -156,13 +154,10 @@ export default function TentangMedsel() {
               alt=""
               src={photoBerbagiCerita}
               title=""
-              width="100%"
-              height="100%"
               layout="responsive"
               objectFit="contain"
+              fill
             />
-          </div>
-          <div className="lg:w-1/2 lg:my-auto">
             <p className="text-3xl font-bold mb-8 hidden lg:block">
               Berbagi Cerita
             </p>
@@ -189,13 +184,10 @@ export default function TentangMedsel() {
               alt=""
               src={photoBergerakSelaras}
               title=""
-              width="100%"
-              height="100%"
               layout="responsive"
               objectFit="contain"
+              fill
             />
-          </div>
-          <div className="lg:w-1/2 lg:my-auto">
             <p className="text-3xl font-bold mb-8 hidden lg:block">
               Bergerak Selaras
             </p>
@@ -222,13 +214,10 @@ export default function TentangMedsel() {
               alt=""
               src={photoImpiSelaras}
               title=""
-              width="100%"
-              height="100%"
               layout="responsive"
               objectFit="contain"
+              fill
             />
-          </div>
-          <div className="lg:w-1/2 lg:my-auto">
             <p className="text-3xl font-bold mb-8 hidden lg:block">
               Impi Selaras
             </p>

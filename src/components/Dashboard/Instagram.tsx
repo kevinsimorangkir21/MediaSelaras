@@ -149,7 +149,7 @@ export default function Instagram() {
                                 <div>
                                     <a className='rounded-md' href={ig[1].url} target="_blank" rel="noreferrer">
                                         <div className='border border-1 rounded-md border-slate-400 w-[200px] h-[200px] relative'>
-                                            <Image  className="object-cover rounded-md"  src={ig[1].image} layout="fill" objectFit="cover"  />
+                                            <Image  className="object-cover rounded-md"  src={ig[1].image} layout="fill" objectFit="cover" alt="Instagram Image" />
                                         </div>
                                     </a>
                                     <FaTrashAlt className=' my-3 mx-auto hover:text-red-500' onClick={() => handleDelete(data[0])} />

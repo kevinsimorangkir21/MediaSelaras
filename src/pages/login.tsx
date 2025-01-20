@@ -104,10 +104,11 @@ export default function Login() {
           <div className="self-center ">
             <Image
               src={loginImage}
-              alt="Login Image"
-              layout="intrinsic"
-              width={500} // Set a fixed width in pixels
-              height={400} // Set a fixed height in pixels
+              alt="/"
+              layout="responsive"
+              objectFit="contain"
+              width="100%"
+              height="80%"
             />
             <p className="text-black font-semibold px-9 text-justify">
               “Media Selaras sebagai suatu Wadah pengedukasian konten kreatif

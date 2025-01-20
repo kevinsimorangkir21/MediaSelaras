@@ -181,7 +181,7 @@ export default function Instagram() {
                                 <div>
                                     <a className='rounded-md' href={spotify[1].url} target="_blank" rel="noreferrer" >
                                         <div className='border border-1 rounded-md border-slate-400 w-[200px] h-[200px] relative mx-auto'>
-                                            <Image  className="object-cover rounded-md"  src={spotify[1].image} alt={spotify[1].title} layout="fill" objectFit="cover"  />
+                                            <Image  className="object-cover rounded-md"  src={spotify[1].image} layout="fill" objectFit="cover"  />
                                         </div>
                                         <p className='font-bold'>{spotify[1].title}</p>
                                         <p>{spotify[1].desc.slice(0, 200)}</p>

@@ -3,7 +3,7 @@ import Layout from "@/components/Layout/Layout";
 import Navbar from "@/components/NavbarFooter/Navbar";
 import NextImage from "@/components/NextImage";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import Footer from "@/components/NavbarFooter/Footer";
 import "swiper/css/pagination";
 import {
@@ -30,20 +30,20 @@ function strukturKomunitas() {
             </div>
             <NextImage
               src="/img/komunitas/komunitas.png"
-              width={100}
-              height={100}
+              width="100%"
+              height="100%"
               layout="fill"
-              style={{ objectFit: "cover" }}
+              objectFit="cover"
               alt="komunitas"
               priority
               className="md:hidden"
             />
             <NextImage
               src="/img/komunitas/komunitas1.png"
-              width={100}
-              height={100}
+              width="100%"
+              height="100%"
               layout="fill"
-              style={{ objectFit: "cover" }}
+              objectFit="cover"
               alt="komunitas"
               priority
             />
@@ -54,8 +54,8 @@ function strukturKomunitas() {
               <div className="absolute w-10 h-10 md:w-16 md:h-16 md:top-5 md:-right-10 top-9 -right-6 -z-10">
                 <NextImage
                   src="/img/komunitas/asset1.png"
-                  width={80}
-                  height={100}
+                  width="80%"
+                  height="100%"
                   alt=""
                   objectFit="cover"
                   layout="responsive"
@@ -96,8 +96,8 @@ function strukturKomunitas() {
                     <div className="max-w-sm">
                       <NextImage
                         src={src}
-                        height={90}
-                        width={80}
+                        height="90%"
+                        width="80%"
                         alt={alt}
                         layout="responsive"
                       />
@@ -117,8 +117,8 @@ function strukturKomunitas() {
               <div className="absolute w-14 -left-7 bottom-3 -z-10 ">
                 <NextImage
                   src="/img/komunitas/asset2.png"
-                  width={75}
-                  height={100}
+                  width="75%"
+                  height="100%"
                   layout="responsive"
                   alt=""
                 />
@@ -148,8 +148,8 @@ function strukturKomunitas() {
                         <NextImage
                           layout="responsive"
                           src={src}
-                          height={100}
-                          width={90}
+                          height="100%"
+                          width="90%"
                           alt={alt}
                         />
                         <h1 className="font-bold text-lg pt-6 pb-2">{nama}</h1>
@@ -165,8 +165,8 @@ function strukturKomunitas() {
                     <NextImage
                       layout="responsive"
                       src={src}
-                      height={100}
-                      width={90}
+                      height="100%"
+                      width="90%"
                       alt={alt}
                     />
                     <h1 className="font-bold text-lg pt-6 pb-2">{nama}</h1>
@@ -182,8 +182,8 @@ function strukturKomunitas() {
               <div className="w-14 absolute -right-2 bottom-12 -z-10">
                 <NextImage
                   src="/img/komunitas/asset3.png"
-                  width={100}
-                  height={100}
+                  width="100%"
+                  height="100%"
                   layout="responsive"
                   alt=""
                 />
@@ -221,8 +221,8 @@ function strukturKomunitas() {
                             <NextImage
                               layout="responsive"
                               src={src}
-                              height={100}
-                              width={100}
+                              height="100%"
+                              width="100%"
                               alt={alt}
                             />
                           </div>
@@ -267,8 +267,8 @@ function strukturKomunitas() {
                               <NextImage
                                 layout="responsive"
                                 src={src}
-                                height={100}
-                                width={100}
+                                height="100%"
+                                width="100%"
                                 alt={alt}
                               />
                             </div>
@@ -293,8 +293,8 @@ function strukturKomunitas() {
               <div className="w-16 absolute -right-10 top-0 -z-10">
                 <NextImage
                   src="/img/komunitas/asset3.png"
-                  width={100}
-                  height={100}
+                  width="100%"
+                  height="100%"
                   layout="responsive"
                   alt=""
                 />
@@ -318,8 +318,8 @@ function strukturKomunitas() {
                               <NextImage
                                 layout="fill"
                                 src={src}
-                                height={100}
-                                width={100}
+                                height="100%"
+                                width="100%"
                                 alt={alt}
                               />
                             </div>
@@ -343,8 +343,8 @@ function strukturKomunitas() {
                             <NextImage
                               layout="fill"
                               src={src}
-                              height={100}
-                              width={100}
+                              height="100%"
+                              width="100%"
                               alt={alt}
                             />
                           </div>
@@ -378,8 +378,8 @@ function strukturKomunitas() {
                               <NextImage
                                 layout="fill"
                                 src={src}
-                                height={100}
-                                width={100}
+                                height="100%"
+                                width="100%"
                                 alt={alt}
                               />
                             </div>
@@ -401,8 +401,8 @@ function strukturKomunitas() {
             <div className="w-16 h-16 absolute top-96 right-10 hidden lg:block">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -410,8 +410,8 @@ function strukturKomunitas() {
             <div className="w-16 h-16 absolute top-[500px] left-10 hidden lg:block">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -420,8 +420,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[1100px] left-28">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -429,8 +429,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[1575px] left-16">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -438,8 +438,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[890px] right-20">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -448,8 +448,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[2300px] left-0">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -458,8 +458,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[1800px] right-10">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -467,8 +467,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[2375px] right-96">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -477,8 +477,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[3450px] left-44">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -486,8 +486,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[3350px] right-28">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -496,8 +496,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[4400px] right-0">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -506,8 +506,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[5300px] right-0">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -515,8 +515,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[4900px] left-16">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -525,8 +525,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[5950px] right-16">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -534,8 +534,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[6400px] left-16">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -543,8 +543,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[6800px] right-0">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -553,8 +553,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute bottom-28 left-16">
               <NextImage
                 src="/img/komunitas/star2.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -562,8 +562,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute top-[7000px] left-16">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />
@@ -571,8 +571,8 @@ function strukturKomunitas() {
             <div className="hidden lg:block w-16 h-16 absolute bottom-10 right-0">
               <NextImage
                 src="/img/komunitas/star1.svg"
-                width={100}
-                height={100}
+                width="100%"
+                height="100%"
                 layout="responsive"
                 alt=""
               />

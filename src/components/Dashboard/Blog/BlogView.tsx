@@ -76,7 +76,7 @@ export default function BlogView() {
                     <div className="w-fit mb-3 mx-auto" key={val.id}>
                             <div className="bg-white p-4 w-80 rounded-md" >
                                 <div className="w-[200px] h-[200px] relative rounded-md mx-auto" >
-                                    <Image className="object-cover rounded-md" src={val.cover} alt={val.title} layout="fill" objectFit="cover" />
+                                    <Image className="object-cover rounded-md" src={val.cover} layout="fill" objectFit="cover" />
                                 </div>
                                 <p className="font-bold text text-xl mt-3">{val.title}</p>
                                 <p className="text-slate-600">{val.description}</p>

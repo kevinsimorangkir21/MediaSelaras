@@ -42,7 +42,7 @@ export default function BlogDetail() {
     useEffect(() => {
         if(router.isReady) getBlog()
         getBlogs()
-    }, [getBlog, router.isReady])
+    }, [router.isReady])
     
     
     return (
@@ -60,7 +60,7 @@ export default function BlogDetail() {
                 <div>
                     <div className='flex justify-center px-8 pt-8 md:px-0'>
                         <div className='relative h-[240px] w-[400px] md:w-full md:h-[500px]'>
-                            <Image className='rounded-xl md:rounded-none md:brightness-50' src={blog.cover} alt={blog.title} layout="fill" objectFit="cover" />
+                            <Image className='rounded-xl md:rounded-none md:brightness-50' src={blog.cover} layout="fill" objectFit="cover" />
                         </div>
                         {/* <Image className='rounded-lg' src={sampleImage} height="256px" objectFit="cover" /> */}
                     </div>
@@ -126,7 +126,7 @@ export default function BlogDetail() {
                                 blogs.map((blog : any, index : number) => {
                                     return  <div className='w-80' key={index} >
                                                 <div className='w-80 h-48 relative'>
-                                                    <Image src={blog.cover} alt={blog.title} layout="fill" objectFit="cover" />
+                                                    <Image src={blog.cover} layout="fill" objectFit="cover" />
                                                 </div>
                                                 <div>
                                                     <p className='text-slate-400 pt-2'>{blog.day + ", " + blog.date}</p>

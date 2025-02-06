@@ -188,7 +188,7 @@ export default function Landingpage() {
               </div>
             </Animation>
           </section>
-          <section className="Arsip Instagram">
+          {/* <section className="Arsip Instagram">
             <Animation className="max-w-7xl m-auto p-7 relative">
               <div className="sm:mb-4 mb-2 ">
                 <h1 className="font-bold lg:text-4xl text-xl">
@@ -242,7 +242,7 @@ export default function Landingpage() {
                 ))}
               </Swiper>
             </Animation>
-          </section>
+          </section> */}
           <section className="Media Selaras Podcast">
             <Animation className="w-full flex gap-14  lg:max-w-7xl m-auto justify-center md:pt-10 lg:pt-14 sm:p-7 ">
               <div className="md:w-2/5 w-full m-auto lg:py-7 sm:p-7 py-2 sm:py-0 px-7 ">

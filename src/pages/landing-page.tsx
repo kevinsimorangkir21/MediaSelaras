@@ -39,7 +39,7 @@ export default function Landingpage() {
       .get("https://api.medselaras.com/api/blog")
       .then((res) => res.data.data.data);
     const covers = _res.map(
-      (event: {
+      (artikel: {
         day: any;
         cover: any;
         slug: any;

@@ -65,7 +65,7 @@ export default function Navbar() {
                 <Link href="/">
                   <a className='text-slate-600 hover:bg-gray-200 hover:text-black block px-3 py-2 rounded-md text-base font-medium'>Beranda</a>
                 </Link>
-                <Link href="/artikel">
+                <Link href="/event">
                   <a className='text-slate-600 hover:bg-gray-200 hover:text-black block px-3 py-2 rounded-md text-base font-medium'>Event</a>
                 </Link>
                 <div className='text-slate-600 hover:bg-gray-200 hover:text-black block px-3 py-2 rounded-md text-base font-medium'>

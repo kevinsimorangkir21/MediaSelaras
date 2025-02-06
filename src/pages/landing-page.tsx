@@ -188,61 +188,6 @@ export default function Landingpage() {
               </div>
             </Animation>
           </section>
-          {/* <section className="Arsip Instagram">
-            <Animation className="max-w-7xl m-auto p-7 relative">
-              <div className="sm:mb-4 mb-2 ">
-                <h1 className="font-bold lg:text-4xl text-xl">
-                  Arsip Terakhir
-                  <br /> Instagram
-                </h1>
-              </div>
-              <Swiper
-                pagination={{
-                  clickable: true,
-                  dynamicMainBullets: 4,
-                }}
-                slidesPerView="auto"
-                modules={[Pagination, Autoplay]}
-                className="flex mx-w-7xl"
-                autoplay={{ delay: 1500 }}
-                spaceBetween={10}
-                breakpoints={{
-                  280: {
-                    slidesPerView: 1,
-                  },
-                  400: {
-                    slidesPerView: 2,
-                  },
-                  600: {
-                    slidesPerView: 3,
-                  },
-                  900: {
-                    slidesPerView: 4,
-                  },
-                }}
-              >
-                {instagrams.map((instagram: any, index) => (
-                  <SwiperSlide
-                    key={index}
-                    className="rounded-xl overflow-hidden"
-                  >
-                    <Link href={instagram.link}>
-                      <div className="rounded-lg overflow-hidden">
-                        <NextImage
-                          src={instagram.image}
-                          width="100%"
-                          height="100%"
-                          alt="/"
-                          layout="responsive"
-                          className="cursor-pointer"
-                        />
-                      </div>
-                    </Link>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </Animation>
-          </section> */}
           <section className="Media Selaras Podcast">
             <Animation className="w-full flex gap-14  lg:max-w-7xl m-auto justify-center md:pt-10 lg:pt-14 sm:p-7 ">
               <div className="md:w-2/5 w-full m-auto lg:py-7 sm:p-7 py-2 sm:py-0 px-7 ">

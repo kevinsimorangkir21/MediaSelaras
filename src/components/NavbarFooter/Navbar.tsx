@@ -53,9 +53,9 @@ export default function Navbar() {
               </div>
               <div className='hidden lg:flex lg:justify-end w-[30%]'>
                 <div className='bg-[#FAE5DB] py-3 px-8 rounded-3xl font-semibold text-[#E77E49] text-sm mr-4 cursor-pointer'>Donasi</div>
-                <Link href="/login">
+                {/* <Link href="/login">
                   <div className='bg-[#E77E49] py-3 px-8 rounded-3xl font-semibold text-white text-sm cursor-pointer'>Masuk</div>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
